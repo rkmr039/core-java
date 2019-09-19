@@ -1,0 +1,56 @@
+package com.hcl.junitpractice;
+
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class DataTest {
+
+  @Test
+  public void testDev() {
+	  Data obj = new Data();
+	  assertEquals(2,obj.dev(5, 2));
+  }
+  @Test(expected = ArithmeticException.class)
+  public void testDevEx() {
+	  Data obj = new Data();
+	  obj.dev(5, 0);
+  }
+  @Test
+  public void testGetProperty() {
+	  Data obj = new Data();
+	  assertNotNull(obj.getProperty("Sai"));
+	  assertNull(obj.getProperty("StayaSai"));
+  }
+  @Test
+  public void testEven() {
+	  Data obj = new Data();
+	  assertTrue(obj.even(6));
+	  assertFalse(obj.even(7));
+  }
+  @Test
+  public void testMinArray() {
+	  Data obj = new Data();
+	  int[] x = {2,1,3,4,5};
+	  assertEquals(1,obj.minArray(x));
+  }
+  @Test
+  public void testMax3() {
+    Data obj = new Data();
+    assertEquals(5, obj.max3(5, 1, 1));
+    assertEquals(5, obj.max3(1, 5, 3));
+    assertEquals(5, obj.max3(1, 3, 5));
+    assertEquals(5, obj.max3(1, 1, 5));
+  }
+  @Test
+  public void testSum() {
+	  Data obj = new Data();
+	  assertEquals(7, obj.sum(2, 5));
+	  assertEquals(4, obj.sum(2, 2));
+  }
+  @Test
+  public void testSayHello() {
+    Data obj = new Data();
+    assertEquals("Welcome to JUnit",obj.sayHello());
+  }
+
+}

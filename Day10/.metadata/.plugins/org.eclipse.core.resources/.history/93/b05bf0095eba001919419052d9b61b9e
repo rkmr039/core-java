@@ -1,0 +1,31 @@
+package com.hcl.junitpractice;
+
+public class Data {
+
+  public int minArray(int[] x) {
+	  int min = x[1];
+	  for (int i : x) {
+		if (min > i) {
+			min = i;
+		}
+	}
+  }
+  public String sayHello() {
+    return "Welcome to JUnit";
+  }
+  
+  public int sum(int a, int b) {
+    return a + b;
+  }
+  
+  public int max3(int a, int b, int c) {
+	  int m = a;
+	  if (m < b) {
+		  m = b;
+	  }
+	  if ( m < c) {
+		  m = c;
+	  }
+	  return m;
+  }
+}

@@ -1,0 +1,15 @@
+package com.hcl.junitpractice;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class DataTest {
+
+  Data obj = new Data();
+  @Test
+  public void testSayHello() {
+    
+  }
+
+}
