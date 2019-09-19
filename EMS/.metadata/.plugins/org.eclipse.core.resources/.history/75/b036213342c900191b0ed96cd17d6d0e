@@ -1,0 +1,33 @@
+<%@page import="com.hcl.ems.EmsBal"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+		int EMP_ID = Integer.parseInt(request.getParameter("ID"));
+		String passWord =  request.getParameter("passWord");
+		boolean status = EmsBal.loginBal(EMP_ID, passWord);
+		
+		if(status){  
+			String uid="";
+			uid+=EMP_ID;
+			session.setAttribute("EMP_ID",uid);
+			%>
+			<jsp:forward page="EmsLeaves.jsp" />
+		    
+			<%
+			} else {
+				%>
+				<jsp:include page="login.html"></jsp:include>
+				<% 
+				out.println("Invalid Login Credentials...");
+				
+			}
+	%>
+</body>
+</html>

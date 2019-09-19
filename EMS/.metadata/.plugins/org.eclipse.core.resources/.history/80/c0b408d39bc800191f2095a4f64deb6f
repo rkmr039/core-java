@@ -1,0 +1,91 @@
+package com.hcl.ems;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class EmsDao {
+	Connection con = null;
+	ResultSet rs = null;
+	PreparedStatement pst = null;
+	String cmd="";
+	
+	public boolean loginDao(int ID, String passWord) {
+			String cmd = "select EMP_ID from EmployLogin where EMP_ID =? and SecretCode=?;";
+			con = DaoConnection.getConnection();
+			
+			boolean result = false;
+			try {
+				pst =  con.prepareStatement(cmd);
+				pst.setInt(1, ID);
+				pst.setString(2, passWord);
+				rs = pst.executeQuery();
+				if(rs.next()) {
+					result = true;
+				} 
+			} catch (Exception e) {
+			}
+			return result;	
+		}
+
+	public Employ getAccountInfoDao(Integer ID) {
+		cmd = "select * from EMPLOYEE where EMP_ID = ?";
+		con = DaoConnection.getConnection();
+		Employ e = null;
+		try {
+			pst = con.prepareStatement(cmd);
+			pst.setInt(1, ID);
+			rs = pst.executeQuery();
+			if(rs.next()){
+				e = new Employ();
+				e.setEmpId(ID);
+				e.setEmpName(rs.getString("EMP_NAME"));
+				e.setEmpMail(rs.getString("EMP_EMAIL"));
+				e.setEmpMobNo(rs.getBigDecimal("EMP_MOB_NO"));
+				e.setEmpDateJoined(rs.getDate("EMP_DATE_JOINED"));
+				e.setEmpDpeName(rs.getString("EMP_DPT_NAME"));
+				e.setEmpLeaveBalance(rs.getInt("EMP_LEAVE_BALANCE"));
+				e.setEmpMgrId(rs.getInt("EMP_MGR_ID"));
+			}
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
+		return e;
+		
+	}
+    
+	public int generateLeaveIdDao() {
+		cmd = "SELECT CASE WHEN MAX(LEA_ID) IS NULL THEN 1 ELSE MAX(LEA_ID)+1 END LEA_ID FROM leave_history;";
+		con = DaoConnection.getConnection();
+		int leaId = 0;
+		try {
+			pst = con.prepareStatement(cmd);
+			rs = pst.executeQuery();
+			rs.next();
+			leaId = rs.getInt("LEA_ID");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return leaId;
+	}
+
+	public String applyLeaveDao(Leaves leave) {
+		cmd = "insert into leave_history values(?,?,?,?,?,?,?,?,?,?);";
+		con = DaoConnection.getConnection();
+		String result = "";
+		try {
+			pst = con.prepareStatement(cmd);
+			pst.setInt(1, leave.getEmpId());
+			pst.setDate(2,(Date) leave.getStartDate());
+			
+			result = "Applied Successfully";
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
+}

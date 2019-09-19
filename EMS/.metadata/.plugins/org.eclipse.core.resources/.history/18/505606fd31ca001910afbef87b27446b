@@ -1,0 +1,56 @@
+<%@page import="com.hcl.ems.Employ"%>
+<%@page import="com.hcl.ems.EmsBal"%>
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="com.hcl.ems.Leaves"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+	Leaves leaves=new Leaves();
+	leaves.setEmpId(Integer.parseInt(request.getParameter("empId")));
+	SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+	Date sDate=sdf.parse(request.getParameter("startDate"));
+	leaves.setStartDate(sDate);
+	int noDays = Integer.parseInt(request.getParameter("noDays"));
+	Date endDate=sdf.parse(request.getParameter("endDate"));
+	leaves.setEndDate(endDate);
+	leaves.setNoDays(noDays);
+	leaves.setReason(request.getParameter("reason"));
+	// if the dates are equal and nodays is not 1 then 
+	if(endDate.equals(sDate) && noDays != 1) {
+		%>
+		<jsp:include page="ApplyLeaves.jsp"></jsp:include>
+		<%
+		out.println("Number of Days should be one in case of Same Start and End Date....");
+	}
+	else if((endDate.getDate() - sDate.getDate()) <  noDays - 1 ) {
+		//  if noDayds is less the selected date range 
+		%>
+		<jsp:include page="ApplyLeaves.jsp"></jsp:include>
+		<% out.println("Number of Days is greater the the selected date range... ");
+	} else {
+		// if the employ has insufficient leave balance
+		if(EmsBal.applyLeaveBal(leaves) == "Insufficient Leave Balance") {
+			%>
+			<jsp:include page="ApplyLeaves.jsp"></jsp:include>
+			<% 
+				/* response.sendRedirect("ApplyLeaves.jsp"); */
+			out.println("Insufficient Leave Balance");
+		} else {
+			EmsBal.applyLeaveBal(leaves);
+			%>
+			<jsp:include page="dashboard.jsp"></jsp:include>
+			<%
+		}
+	}
+%>
+	
+</body>
+</html>

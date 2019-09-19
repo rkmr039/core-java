@@ -1,0 +1,31 @@
+package com.hcl.ems;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+class HolidayObject{
+	int day;
+	int month;
+	HolidayObject(int day, int month){
+		this.day = day;
+		this.month = month;
+	}
+	
+}
+public class Holidays {
+
+	public int getHolidays(Date startDate, Date enddate){
+		int holidays = 0;
+		
+		List<HolidayObject> holidaysList = new ArrayList<HolidayObject>();
+		holidaysList.add(new HolidayObject(15, 8));
+		holidaysList.add(new HolidayObject(26, 1));
+		holidaysList.add(new HolidayObject(2, 10));
+		
+		
+		return holidays;
+		
+		
+	}
+}

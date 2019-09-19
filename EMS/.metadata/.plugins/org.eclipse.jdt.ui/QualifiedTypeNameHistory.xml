@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="java.math.BigDecimal"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="com.hcl.ems.LeaveTypes"/>
+<fullyQualifiedTypeName name="com.hcl.ems.LeaveStatus"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="com.hcl.ems.Employ"/>
+<fullyQualifiedTypeName name="com.hcl.ems.EmpLeaves"/>
+<fullyQualifiedTypeName name="com.hcl.ems.DaoConnection"/>
+<fullyQualifiedTypeName name="com.hcl.ems.EmsDao"/>
+<fullyQualifiedTypeName name="com.hcl.ems.Leaves"/>
+<fullyQualifiedTypeName name="com.hcl.ems.EmsBal"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.hcl.ems.HolidayObject"/>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="com.hcl.ems.Holidays"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+</qualifiedTypeNameHistroy>

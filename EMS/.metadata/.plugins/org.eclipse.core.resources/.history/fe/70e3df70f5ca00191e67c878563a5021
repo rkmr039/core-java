@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login | EMS </title>
+
+
+</head>
+<body>
+	<form method="post" action="login.jsp">
+		<center>
+			ID:
+			<input type="text" name="ID"/><br/><br/>
+			Password:
+			<input type="password" name="passWord"/><br/><br/>
+			
+			<input type="submit" value="Login" />&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="reset" value="Reset" />
+			
+			<span id="err"></span>
+		</center>
+	</form>
+</body>
+</html>

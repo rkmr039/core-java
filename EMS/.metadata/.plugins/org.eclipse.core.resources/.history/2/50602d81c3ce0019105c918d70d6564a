@@ -1,0 +1,17 @@
+package com.hcl.ems;
+
+import java.util.Date;
+
+public class Holidays {
+
+	public int getHolidays(Date startDate, Date enddate){
+		int holidays = 0;
+		
+		
+		
+		
+		return holidays;
+		
+		
+	}
+}
