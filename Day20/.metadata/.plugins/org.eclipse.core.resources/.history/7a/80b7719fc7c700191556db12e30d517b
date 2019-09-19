@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form method="get" action="EmployUpdate.jsp">
+		<center>
+			Employ No:
+			<input type="text"  value="<%=rs.getInt("empno") %>" readonly  name="empno"/><br/><br/>
+			Employ Name:
+			<input type="text"  value="<%=rs.getString("name")%>" name="name"/><br/><br/>
+			Department:
+			<input type="text"  value="<%=rs.getString("dept")%>" name="dept"/><br/><br/>
+			Designation:
+			<input type="text"  value="<%=rs.getString("desig")%>" name="desig"/><br/><br/>
+			Salary:
+			<input type="text"  value="<%=rs.getInt("basic")%>" name="basic"/><br/><br/>
+			<input type="submit" value="Update"/><br/><br/>
+		</center>
+	</form>
+</body>
+</html>
