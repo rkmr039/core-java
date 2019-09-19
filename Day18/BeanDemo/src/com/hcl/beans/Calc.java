@@ -1,0 +1,22 @@
+package com.hcl.beans;
+
+public class Calc {
+	private int numOne;
+	private int numTwo;
+	public int getNumOne() {
+		return numOne;
+	}
+	public void setNumOne(int numOne) {
+		this.numOne = numOne;
+	}
+	public int getNumTwo() {
+		return numTwo;
+	}
+	public void setNumTwo(int numTwo) {
+		this.numTwo = numTwo;
+	}
+	
+	public int calSum() {
+		return getNumOne() + getNumTwo(); 
+	}
+}
