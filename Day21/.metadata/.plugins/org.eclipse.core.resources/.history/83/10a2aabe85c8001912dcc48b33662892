@@ -1,0 +1,10 @@
+package com.hcl.hello;
+
+public class HelloImpl implements Hello {
+
+	public String sayHello(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

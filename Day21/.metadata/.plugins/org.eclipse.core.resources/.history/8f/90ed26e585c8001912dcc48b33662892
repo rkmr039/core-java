@@ -1,0 +1,7 @@
+package com.hcl.hello;
+
+public class HelloImpl implements Hello {
+
+	private String greeting;
+	
+}

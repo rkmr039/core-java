@@ -1,0 +1,29 @@
+package com.hcl.beans;
+
+public class Student {
+	private int sid;
+	private String name;
+	private LunchBox lunchBox;
+	
+	public int getSid() {
+		return sid;
+	}
+	public void setSid(int sid) {
+		this.sid = sid;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public LunchBox getLunchBox() {
+		return lunchBox;
+	}
+	public void setLunchBox(LunchBox lunchBox) {
+		this.lunchBox = lunchBox;
+	}
+	
+	
+	
+}
