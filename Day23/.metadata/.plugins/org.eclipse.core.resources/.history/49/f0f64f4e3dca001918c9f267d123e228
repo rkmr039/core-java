@@ -1,0 +1,8 @@
+package com.hcl.employ;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class EmployController {
+	
+}
