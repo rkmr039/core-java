@@ -1,0 +1,34 @@
+package com.hcl.inventory;
+
+public class AddStock {
+	private String itemName;
+	private double price;
+	private int qntyAvail;
+	public String getItemName() {
+		return itemName;
+	}
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	public int getQntyAvail() {
+		return qntyAvail;
+	}
+	public void setQntyAvail(int qntyAvail) {
+		this.qntyAvail = qntyAvail;
+	}
+	public String addStock() {
+		Stock obj = new Stock();
+		obj.setStockId(InventryBal.generateStockIdBal());
+		obj.setItemName(itemName);
+		obj.setPrice(price);
+		obj.setQuantityAvail(qntyAvail);
+		return InventryBal.addStockBal(obj);
+	}
+	
+}
