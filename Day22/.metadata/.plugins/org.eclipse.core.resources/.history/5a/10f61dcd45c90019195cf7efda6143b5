@@ -1,0 +1,7 @@
+package com.hcl.inventorydemo;
+
+public class Order {
+	private int qtyord,orderid;
+	private Product objProdict;
+	
+}

@@ -1,0 +1,29 @@
+package com.hcl.dept;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainProg {
+	public static void main(String[] args) {
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("jdbc.xml");
+		DataQueryDao d = (DataQueryDao)ctx.getBean("myDao");
+	d.showDept();
+	System.out.println(new Date().getDate()+1);
+	SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+	Date sDate=sdf.parse(request.getParameter("startDate"));
+	leaves.setStartDate(sDate);
+	
+	Date endDate=sdf.parse(request.getParameter("endDate"));
+	leaves.setEndDate(endDate);
+	leaves.setNoDays(Integer.parseInt(request.getParameter("noDays")));
+	leaves.setReason(request.getParameter("reason"));
+	if(sDate.compareTo(new Date()) > 0 ) {
+		if(sDate.getDate() >  new Date().getDate()+1 ) {
+			
+		}
+	}
+	}
+}
