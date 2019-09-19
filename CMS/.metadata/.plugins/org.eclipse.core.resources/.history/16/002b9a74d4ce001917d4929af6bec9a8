@@ -1,0 +1,35 @@
+<%@page import="com.hcl.cms.Subject"%>
+<%@page import="com.hcl.cms.CollegeCrud"%>
+<%@page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+		var options = [['TOC',[15,16]],
+				             ['DBMS',[20,21]],
+				             ['Microprocessor',[25,26]],
+				             ['DataStructure',[20,22]],
+				             ['Algorithms',[35,36]]];
+		var i=0;
+		var list = ["TOC","DBMS","Microprocessor","Algorithms"];
+</script>
+<body>
+	<%
+		 
+	%>
+	<form method="post" action="AddSubject.jsp">
+		<select id="selectSucject" name="list">
+			<option>Select One Option</option>
+			<c:forEach var="option" items="${option}">
+				<c:out value="${option}" ></c:out>
+			</c:forEach>
+			
+		</select><br/><br/>
+	
+</body>
+</html>

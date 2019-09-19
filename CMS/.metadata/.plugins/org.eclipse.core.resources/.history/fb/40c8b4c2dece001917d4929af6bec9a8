@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<script>
+$( document ).ready(function() {
+});
+	var list = [['TOC',22,23],['DBMS',45,46],['Algorithm',55,56]];
+	var select = document.getElementById("subject");
+	for(var i = 0; i < select.length; i++) {
+		var option = document.createElement("option");
+		option.text = list[i][0] ;
+		option.value= list[i][0];
+		select.add(option);		
+	}
+
+	
+</script>
+
+<body>
+	
+		<form method="get" action="AddSubjects.jsp">
+		<select id="subject" name="subject">
+			<option >Please Select One</option>
+			
+		</select><br/><br/>
+		Theory    : <input type="text" name="theory" /><br/><br/>
+		Practical : <input type="text" name="practical"/><br/><br/>
+		Year      : <input type="text" name="year" /><br/><br/>
+		Instructor: <input type="text" name="instructor"/><br/><br/>
+		<input type="submit" value="Submit"/>
+	</form>
+</body>
+</html>

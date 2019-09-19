@@ -1,0 +1,11 @@
+package com.hcl.cms;
+
+import junit.framework.TestCase;
+
+public class TestCMS extends TestCase {
+	
+	@Test
+	public void testGetFID(){
+		
+	}
+}

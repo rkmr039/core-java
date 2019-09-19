@@ -1,0 +1,12 @@
+package com.hcl.cms;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Courselist")
+public class Courses {
+	
+	private int courseNo;
+
+}

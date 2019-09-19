@@ -1,0 +1,24 @@
+package com.hcl.cms;
+
+
+public class FbCount {
+	
+	private String fbValue;
+	private long count;
+	
+	
+	public String getFbValue() {
+		return fbValue;
+	}
+	public void setFbValue(String fbValue) {
+		this.fbValue = fbValue;
+	}
+	public long getCount() {
+		return count;
+	}
+	public void setCount(long count) {
+		this.count = count;
+	}
+	
+	
+}

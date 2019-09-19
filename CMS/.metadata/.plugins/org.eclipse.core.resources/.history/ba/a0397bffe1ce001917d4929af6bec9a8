@@ -1,0 +1,12 @@
+package com.hcl.cms;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Feedback")
+public class Feedback {
+	private String fid;
+	
+
+}

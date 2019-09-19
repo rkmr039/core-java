@@ -1,0 +1,7 @@
+package com.hcl.cms;
+
+@Entity
+@Table(name="Feedback")
+public class Feedback {
+
+}

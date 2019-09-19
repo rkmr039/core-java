@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	
+		<select id="selectSucject">
+			<option>Select One Option</option>
+		</select><br/><br/>
+		Theory    : <input type="text" name="theory" /><br/><br/>
+		Practical : <input type="text" name="practical"/><br/><br/>
+		Year      : <input type="text" name="year" /><br/><br/>
+		Instructor: <input type="text" name="instructor"/><br/><br/>
+		<input type="submit" value="Submit"/>
+
+</body>
+</html>

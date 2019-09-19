@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+		String fid = (String)session.getAttribute("fid");
+		String ins = (String)session.getAttribute("instructor");
+		String studentName = (String)session.getAttribute("studentName");
+		String fbvalue = request.getParameter("feedback");
+		String subject = request.getParameter("subDropDown");
+	%>
+	FeedbackId : <input type="text" name="fid" readonly value=<%=fid%>   /><br/><br/>
+	Instructor : <input type="text" name="instructor" readonly value=<%=ins%> /><br/><br/>
+		Student Name : <input type="text" name="studentName" readonly value=<%=studentName%>   /><br/><br/>
+	Subject : <input type="text" name="subject" readonly value=<%=subject%> /><br/><br/>
+	
+</body>
+</html>

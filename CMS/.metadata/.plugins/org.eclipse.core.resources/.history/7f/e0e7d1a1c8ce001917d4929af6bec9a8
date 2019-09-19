@@ -1,0 +1,8 @@
+package com.hcl.cms;
+
+import org.hibernate.annotations.Table;
+
+@Table
+public class Courses {
+
+}

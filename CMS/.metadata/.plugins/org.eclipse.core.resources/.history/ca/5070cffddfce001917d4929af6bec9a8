@@ -1,0 +1,126 @@
+<%@page import="com.hcl.cms.Subjects"%>
+<%@page import="com.hcl.cms.CollegeCrud"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<script>
+	
+	
+</script>
+<body>
+
+	<form method="get" action="AddSubjects.jsp">
+		<select id="subject" name="subject" onchange="change()">
+			<option >Please Select One</option>
+			<option value="TOC">TOC</option>
+			<option value="DBMS">DBMS</option>
+			<option value="Microprocessor">Microprocessor</option>
+			<option value="Algorithm">Algorithm</option>
+			 <option value="Microprocessor Interfacing">Microprocessor Interfacing</option>
+                <option value="C#">C#</option>
+                <option value="Operating System">Operating System</option>
+                <option value="SQL Server">SQL Server</option>
+                <option value="Networking">Networking</option>
+		</select><br/><br/>
+		Theory    : <input type="text" readonly id="theory" name="theory" /><br/><br/>
+		Practical : <input type="text" readonly id="practical" name="practical"/><br/><br/>
+		Year      : <input type="text" name="year" /><br/><br/>
+		Instructor: <input type="text" name="instructor"/><br/><br/>
+		<input type="submit" value="Submit"/>
+	</form>
+	<script>
+	function change(){
+        var dval= document.getElementById("subject").value;
+        
+       
+        if(dval =="PC Architecture"){
+        	//alert("hi");
+        	productForm.theory.value="42";
+        	productForm.practical.value="14";
+        }
+        if(dval =="PC Hardware 1"){
+        	//alert("hi");
+        	productForm.theory.value="90";
+        	productForm.practical.value="50";
+        }
+        if(dval =="PC Hardware 2"){
+        	//alert("hi");
+        	productForm.theory.value="69";
+        	productForm.practical.value="41";
+        }
+        
+        if(dval =="PC Hardware 2"){
+        	//alert("hi");
+        	productForm.theory.value="69";
+        	productForm.practical.value="41";
+        }
+        
+        if(dval =="Microprocessor Interfacing"){
+        	//alert("hi");
+        	productForm.theory.value="107";
+        	productForm.practical.value="93";
+        }
+        
+        if(dval =="C#"){
+        	//alert("hi");
+        	productForm.theory.value="84";
+        	productForm.practical.value="56";
+        }
+        
+        if(dval =="Data Structures"){
+        	//alert("hi");
+        	productForm.theory.value="60";
+        	productForm.practical.value="0";
+        }
+        
+        if(dval =="Operating System"){
+        	//alert("hi");
+        	productForm.theory.value="80";
+        	productForm.practical.value="70";
+        }
+        
+        if(dval =="SQL Server"){
+        	//alert("hi");
+        	productForm.theory.value="66";
+        	productForm.practical.value="34";
+        }
+        
+        if(dval =="Networking"){
+        	//alert("hi");
+        	productForm.theory.value="94";
+        	productForm.practical.value="156";
+        }
+        
+        }
+	
+	</script>
+	
+	<%
+	
+	
+		if(request.getParameter("subject") != null &&
+				request.getParameter("theory") != null &&
+				request.getParameter("practical") != null &&
+				request.getParameter("year") != null &&
+				request.getParameter("instructor") != null 
+				) {
+			CollegeCrud crud = new CollegeCrud();
+			Subjects subject = new Subjects();
+			subject.setSubject(request.getParameter("subject"));
+			subject.setInstructor(request.getParameter("instructor"));
+			subject.setPractical(Integer.parseInt(request.getParameter("practical")));
+			subject.setTheory(Integer.parseInt(request.getParameter("theory")));
+			subject.setYear(Integer.parseInt(request.getParameter("year")));
+			
+			crud.addSubject(subject);
+		}
+			
+	
+	%>
+</body>
+</html>

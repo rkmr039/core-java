@@ -1,0 +1,50 @@
+<%@page import="com.hcl.cms.Subjects"%>
+<%@page import="com.hcl.cms.CollegeCrud"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form method="get" action="AddSubjects.jsp">
+		<select id="subject" name="subject">
+			<option >Please Select One</option>
+			<option value="TOC">TOC</option>
+			<option value="DBMS">DBMS</option>
+			<option value="Microprocessor">Microprocessor</option>
+			<option value="Algorithm">Algorithm</option>
+		</select><br/><br/>
+		Theory    : <input type="text" name="theory" /><br/><br/>
+		Practical : <input type="text" name="practical"/><br/><br/>
+		Year      : <input type="text" name="year" /><br/><br/>
+		Instructor: <input type="text" name="instructor"/><br/><br/>
+		<input type="submit" value="Submit"/>
+	</form>
+	<%
+		if(request.getParameter("subject") != null &&
+				request.getParameter("theory") != null &&
+				request.getParameter("practical") != null &&
+				request.getParameter("year") != null &&
+				request.getParameter("instructor") != null 
+				) {
+			CollegeCrud crud = new CollegeCrud();
+			Subjects subject = new Subjects();
+			subject.setSubject(request.getParameter("subject"));
+			subject.setInstructor(request.getParameter("instructor"));
+			subject.setPractical(Integer.parseInt(request.getParameter("practical")));
+			subject.setTheory(Integer.parseInt(request.getParameter("theory")));
+			subject.setYear(Integer.parseInt(request.getParameter("year")));
+			
+			crud.addSubject(subject);
+		} else {
+			out.println("NULL VALUE");
+		}
+			
+	
+	%>
+</body>
+</html>

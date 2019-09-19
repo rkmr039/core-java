@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<script>
+	var list = [['TOC',22,23],['DBMS',45,46],['Algorithm',55,56]];
+	
+	
+</script>
+
+<body>
+	
+		<form method="get" action="AddSubjects.jsp">
+		<select id="subject" name="subject">
+			<option >Please Select One</option>
+			<option value="TOC">TOC</option>
+			<option value="DBMS">DBMS</option>
+			<option value="Microprocessor">Microprocessor</option>
+			<option value="Algorithm">Algorithm</option>
+		</select><br/><br/>
+		Theory    : <input type="text" name="theory" /><br/><br/>
+		Practical : <input type="text" name="practical"/><br/><br/>
+		Year      : <input type="text" name="year" /><br/><br/>
+		Instructor: <input type="text" name="instructor"/><br/><br/>
+		<input type="submit" value="Submit"/>
+	</form>
+</body>
+</html>
