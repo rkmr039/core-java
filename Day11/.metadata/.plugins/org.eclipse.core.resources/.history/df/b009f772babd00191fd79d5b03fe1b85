@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+
+function show() {
+	var res="";
+	var obj = new Date();
+	res += "Today's Date is : " + obj.getdate() + + "<br/><br/>";;
+}

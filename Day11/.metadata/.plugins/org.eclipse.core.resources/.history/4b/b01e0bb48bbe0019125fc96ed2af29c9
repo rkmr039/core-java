@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="Online.js"></script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body onload="show()">
+
+	<form name="frmOnline" id="form">
+		<center>
+		<table border="2">
+			<tr>
+				<td colspan="2"><p id="question"></p>
+				</td>
+			</tr>
+			<tr>
+				<td><input type="radio" id="a1" name="exam" /></td>
+				<td><p id="opt1"></p></p>
+			</tr>
+			<tr>
+				<td><input type="radio" id="a2" name="exam" /></td>
+				<td><p id="opt2"></p></p>
+			</tr>
+			<tr>
+				<td><input type="radio" id="a3" name="exam" /></td>
+				<td><p id="opt3"></p></p>
+			</tr>
+			<tr>
+				<td><input type="radio" id="a4" name="exam" /></td>
+				<td><p id="opt4"></p></p>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="button" value="Show" onclick="nextQuestion()" /></td>
+			</tr>
+			<tr>
+				<td display="none"><span id="res"  ></span></td>
+			</tr>
+		</table>
+		</center>
+		
+	</form>
+</body>
+</html>

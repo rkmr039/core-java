@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form method="post">
+	USA Phone No :
+	<input type="text" required="required" placeholder="xxx-xxx-xxxx"
+	name="phone" 
+	pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+	
+	
+	</form>
+</body>
+</html>

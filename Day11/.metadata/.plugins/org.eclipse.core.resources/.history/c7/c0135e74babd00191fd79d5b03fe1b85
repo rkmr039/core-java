@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+
+function show() {
+	var res="";
+	var obj = new Date();
+	res += "Today's Date is : " + obj.getdate()  + "<br/><br/>";
+	var month = obj.getMonth;
+	month = month + 1;
+	res += "Month is : " + month + "<br/><br/>";
+	res += ""
+}

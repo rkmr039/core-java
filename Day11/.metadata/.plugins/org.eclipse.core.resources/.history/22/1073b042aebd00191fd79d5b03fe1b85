@@ -1,0 +1,7 @@
+function getFullName() {
+	var fn = "";
+	var ln = "";
+	fn = frmName.firstName.value;
+	ln = frmName.lastName.value;
+	frmName.
+}

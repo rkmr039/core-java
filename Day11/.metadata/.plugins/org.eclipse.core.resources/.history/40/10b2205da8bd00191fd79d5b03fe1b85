@@ -1,0 +1,4 @@
+function show() {
+	var radio = frmRadio.elements["gender"];
+	for (var )
+}

@@ -1,0 +1,7 @@
+function gotCursor() {
+	alert("Cursor Placed....");
+	
+}
+function lostCursor() {
+	alert("Lost Cursor...")
+}

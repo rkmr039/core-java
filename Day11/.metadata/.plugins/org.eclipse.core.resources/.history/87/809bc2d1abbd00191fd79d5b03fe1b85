@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="Js8.js"> </script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="frmData">
+		<center>
+			First Name:
+			<input type="text" name="firstName" value="Sheik" /><br/><br/>
+			Last Name:
+			<input type="text" name="lastName" autofocus="autofocus" onfocus="gotFocus()" onblur="lostCursor()" /><br/><br/>
+		</center>
+	</form>
+</body>
+</html>

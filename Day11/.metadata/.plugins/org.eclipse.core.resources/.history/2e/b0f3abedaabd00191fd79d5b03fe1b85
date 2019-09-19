@@ -1,0 +1,9 @@
+function gotCursor() {
+	alert("Cursor Placed....");
+	frmData.firstName.value="";
+	
+}
+function lostCursor() {
+	alert("Lost Cursor...")
+	frmData.lastName.value="";
+}

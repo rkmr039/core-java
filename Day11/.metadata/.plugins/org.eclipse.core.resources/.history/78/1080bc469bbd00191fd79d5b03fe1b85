@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	function attDemo() {
+		var res="";
+		if(frmAtt.chkAnisha.checked == true) {
+			res+="Anisha is Present<br />";
+		} else {
+			res+="Anisha is Absent<br />";
+		}
+		document.getElementById("res").innerHTML = res;
+		if(frmAtt.chkUttam.checked == true) {
+			res+="Uttam is Present<br />";
+		} else {
+			res+="Uttam is Absent<br />";
+		}
+		document.getElementById("res").innerHTML = res;
+		if(frmAtt.chkRishab.checked == true) {
+			res+="Rishab is Present<br />";
+		} else {
+			res+="Rishab is Absent<br />";
+		}
+		document.getElementById("res").innerHTML = res;
+		if(frmAtt.chkRaghu.checked == true) {
+			res+="Anisha is Present<br />";
+		} else {
+			res+="Anisha is Absent<br />";
+		}
+		document.getElementById("res").innerHTML = res;
+	}
+</script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="frmAtt">
+		<center>
+			Anisha:
+			<input type="checkbox" name="chkAnisha" onchange="attDemo()" />
+			<br /><br />
+			Rishab:
+			<input type="checkbox" name="chkRishab" onchange="attDemo()"/>
+			<br /><br />
+			Uttam:
+			<input type="checkbox" name="chkUttam" onchange="attDemo()"/>
+			<br /><br />
+			Raghu:
+			<input type="checkbox" name="chkRaghu" onchange="attDemo()"/>
+			<br /><br />
+			<span id="res">
+			
+			</span>
+		</center>
+	</form>
+</body>
+</html>

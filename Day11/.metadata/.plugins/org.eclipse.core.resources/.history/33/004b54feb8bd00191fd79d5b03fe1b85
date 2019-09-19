@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+function strDemo() {
+	var res = "";
+	var str = "Welcome to HTML... by Prasanna";
+	var len = str.length;
+	res += "Length is : "+ len + "<br />";
+	res += "Lower case String is : <b> "+ str.toLowerCase() + " </b><br/><br/>";
+	res += "Upper Case String is : <b> "+ str.toUpperCase() + " </b><br/><br/>";
+	res += "First Occurance of 'a' is <b> " + str.indexOf("a") + " </b><br/><br/>";
+	res += "Char at 5th Position : <b>" + str.charAt(5) + + " </b><br/><br/>";
+	res += "Replaced String is <b>" + str.replace("HTML, HTMl 5") + "</b><br/><br/>";
+	
+	document.getElementById("res").innerHTML = res;
+}

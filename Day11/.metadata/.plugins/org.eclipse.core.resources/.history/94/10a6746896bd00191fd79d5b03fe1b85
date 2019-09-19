@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	function sum() {
+		if(isNaN(frmCalc.txtFirstNum.value)) {
+			document.getElementById("err1").innerHTML = "Only Numbers Plz.";
+		} else {
+			document.getElementById("err1").innerHTML = "";
+		}
+		if(isNaN(frmCalc.txtSecondNum.value)) {
+			document.getElementById("err2").innerHTML = "Only Numbers Plz.";
+		} else {
+			document.getElementById("err2").innerHTML = "";
+		}
+		if(frmCalc.txtFirstNum.value == "") {
+			document.getElementById("err1").innerHTML = "Please Enter First Number";
+			return ;
+		} else {
+			document.getElementById("err1").innerHTML = "";
+		}
+		if(frmCalc.txtSecondNum.value == "") {
+			document.getElementById("err2").innerHTML = "Please Enter Second Number";
+			return ;
+		} else {
+			document.getElementById("err2").innerHTML = "";
+		}
+		var a = parseInt(frmCalc.txtFirstNum.value);
+		var b = parseInt(frmCalc.txtSecondNum.value);
+		var res = a + b;
+		frmCalc.txtResult.value = res;
+	}
+	function sub() {
+		if(isNaN(frmCalc.txtFirstNum.value)) {
+			document.getElementById("err1").innerHTML = "Only Numbers Plz.";
+		} else {
+			document.getElementById("err1").innerHTML = "";
+		}
+		if(isNaN(frmCalc.txtSecondNum.value)) {
+			document.getElementById("err2").innerHTML = "Only Numbers Plz.";
+		} else {
+			document.getElementById("err2").innerHTML = "";
+		}
+		if(frmCalc.txtFirstNum.value == "") {
+			document.getElementById("err1").innerHTML = "Please Enter First Number";
+			return ;
+		} else {
+			document.getElementById("err1").innerHTML = "";
+		}
+		if(frmCalc.txtSecondNum.value == "") {
+			document.getElementById("err2").innerHTML = "Please Enter Second Number";
+			return ;
+		} else {
+			document.getElementById("err2").innerHTML = "";
+		}
+		
+		var a = parseInt(frmCalc.txtFirstNum.value);
+		var b = parseInt(frmCalc.txtSecondNum.value);
+		var res = a - b;
+		frmCalc.txtResult.value = res;
+	}
+	function mul() {
+		if(isNaN(frmCalc.txtFirstNum.value)) {
+			document.getElementById("err1").innerHTML = "Only Numbers Plz.";
+		} else {
+			document.getElementById("err1").innerHTML = "";
+		}
+		if(isNaN(frmCalc.txtSecondNum.value)) {
+			document.getElementById("err2").innerHTML = "Only Numbers Plz.";
+		} else {
+			document.getElementById("err2").innerHTML = "";
+		}
+		if(frmCalc.txtFirstNum.value == "") {
+			document.getElementById("err1").innerHTML = "Please Enter First Number";
+			return ;
+		} else {
+			document.getElementById("err1").innerHTML = "";
+		}
+		if(frmCalc.txtSecondNum.value == "") {
+			document.getElementById("err2").innerHTML = "Please Enter Second Number";
+			return ;
+		} else {
+			document.getElementById("err2").innerHTML = "";
+		}
+		var a = parseInt(frmCalc.txtFirstNum.value);
+		var b = parseInt(frmCalc.txtSecondNum.value);
+		var res = a * b;
+		frmCalc.txtResult.value = res;
+	}
+</script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="frmCalc">
+		<center>
+			<table border="3">
+				<tr>
+					<th colspan="2">
+						Calculator Form
+					</th>
+				</tr>
+				<tr>
+					<th>First Num</th>
+					<td>
+						<input type="text" name="txtFirstNum" />
+						<span id="err1"></span>
+					</td>	
+				</tr>
+				<tr>
+					<th>Second Num</th>
+					<td>
+						<input type="text" name="txtSecondNum" />
+						<span id="err2"></span>
+					</td>	
+				</tr>
+				<tr>
+					<th>Result</th>
+					<td>
+						<input type="text" name="txtResult" />				
+					</td>
+				</tr>	
+				<tr>
+					<th colspan="2">
+						<input type="button" value="Sum" onclick="sum()"/>	
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="button" value="Sub" onclick="sub()"/>	
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="button" value="Mul" onclick="mul()"/>	
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</th>
+				</tr>	
+			</table>
+		</center>
+	</form>
+</body>
+</html>

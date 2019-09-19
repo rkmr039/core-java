@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+
+function show() {
+	var arr = [3,
+	           'hello',
+	           function() {
+		return "Welcome"
+	},
+	{'state':'TS',
+	'city':'Hyderabad'}];
+	var res ="":
+	res += "First Element" + arr[0] + "<br/>";	
+	res += "Second Element" + arr[1] + "<br/>";	
+	res += "Third Element" + arr[2] + "<br/>";	
+	res += "Fourth Element : City " + arr[3].city + "<br/>";	
+	res += "Fourth Element : State " + arr[3].state + "<br/>";	
+	document.getElementById("res").innerHTML = res;
+	
+}

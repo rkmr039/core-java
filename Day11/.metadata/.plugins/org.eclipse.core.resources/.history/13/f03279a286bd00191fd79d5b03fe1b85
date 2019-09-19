@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	function rishab() {
+		alert("Hi I am Rishab");
+	}
+	function amit() {
+		alert("Hi I am Amit");
+	}
+	function raghu() {
+		alert("Hi I am Raghu");
+	}
+</script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<center>
+		<input type="button" value="Rishab" onclick="rishab()" />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="button" value="Amit" onclick="amit()"/>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="button" value="Raghu" onclick="raghu()"/>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</center>
+</body>
+</html>

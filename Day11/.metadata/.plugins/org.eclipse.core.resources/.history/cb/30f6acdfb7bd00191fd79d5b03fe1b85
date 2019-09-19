@@ -1,0 +1,7 @@
+/**
+ * 
+ */
+function strDemo() {
+	var res = "";
+	var str = "Welcome to HTML";
+}

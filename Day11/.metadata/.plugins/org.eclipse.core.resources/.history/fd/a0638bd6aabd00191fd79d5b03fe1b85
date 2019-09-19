@@ -1,0 +1,4 @@
+function gotCursor() {
+	alert("Cursor Placed....");
+	
+}

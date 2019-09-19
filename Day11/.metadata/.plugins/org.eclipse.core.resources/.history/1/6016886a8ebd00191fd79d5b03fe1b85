@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Table Example </title>
+</head>
+<body>
+	<center>
+		<table border="3" cellpadding="5" cellspacing="10"> 
+			<tr>
+				<td>Empno</td>
+				<td>Name</td>
+				<td>Salary</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>Uttam</td>
+				<td>88235</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>Rishab</td>
+				<td>25000</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>Amit</td>
+				<td>30000</td>
+			</tr>			
+		</table>
+	</center>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<p id="questions">
+		
+	</p>
+	<input type="radio" name="exam" />
+	<p id="opt1"></p>
+	<input type="radio" name="exam" />
+	<p id="opt2"></p>
+	<input type="radio" name="exam" />
+	<p id="opt3"></p>
+	<input type="radio" name="exam" />
+	<p id="opt4"></p>
+	
+</body>
+</html>

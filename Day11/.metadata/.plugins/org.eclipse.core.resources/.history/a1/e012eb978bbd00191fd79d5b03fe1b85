@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script>
+
+</script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="formName" >
+		<center>
+			Name :
+			<input type="text" name="studName" />
+			<br />
+			<br />
+			<input type="button" value="Show" onclick="show()" />
+		</center>
+	
+	</form>	
+</body>
+</html>

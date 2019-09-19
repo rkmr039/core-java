@@ -1,0 +1,8 @@
+/**
+ * 
+ */
+function show() {
+	var today = new Date();
+	var fullyear = obj.getFullYear();
+	
+}

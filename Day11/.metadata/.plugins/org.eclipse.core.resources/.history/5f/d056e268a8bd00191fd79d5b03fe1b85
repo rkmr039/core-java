@@ -1,0 +1,8 @@
+function show() {
+	var radio = frmRadio.elements["gender"];
+	for (var i = 0;i< radio.length; i++) {
+		if(radio[i].checked) {
+			gen = radio[i].value;
+		}
+	}
+}

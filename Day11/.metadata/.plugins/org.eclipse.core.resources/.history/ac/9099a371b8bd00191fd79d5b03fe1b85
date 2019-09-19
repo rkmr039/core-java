@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+function strDemo() {
+	var res = "";
+	var str = "Welcome to HTML... by Prasanna";
+	var len = str.length;
+	res += "Length is : "+ len + "<br />";
+	res += "Lower case String is : "+ str.toLowerCase() + "<br/><br/>";
+	res += "Upper Case String is : "+ str.toUpperCase() + "<br/><br/>";
+	res +="First Occurance of 'a' is<b>" + str.indexOf("a") + "<br/><br/>";
+}

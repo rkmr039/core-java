@@ -1,0 +1,8 @@
+/**
+ * 
+ */
+
+function show() {
+	var res="";
+	var obj = new Date();
+}
