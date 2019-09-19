@@ -1,0 +1,20 @@
+package com.hcl.library;
+
+public class SearchBooks {
+
+	private String searcType;
+	private String searchValue;
+	public String getSearcType() {
+		return searcType;
+	}
+	public void setSearcType(String searcType) {
+		this.searcType = searcType;
+	}
+	public String getSearchValue() {
+		return searchValue;
+	}
+	public void setSearchValue(String searchValue) {
+		this.searchValue = searchValue;
+	}
+	
+}

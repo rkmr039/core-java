@@ -1,0 +1,46 @@
+package com.hcl.library;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class SearchBooks
+ */
+public class IssueBooks {
+	private int Id;
+	private String Name;
+	private String dept;
+	private String Author;
+	public int getId() {
+		return Id;
+	}
+	public void setId(int id) {
+		Id = id;
+	}
+	public String getName() {
+		return Name;
+	}
+	public void setName(String name) {
+		Name = name;
+	}
+	public String getDept() {
+		return dept;
+	}
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+	public String getAuthor() {
+		return Author;
+	}
+	public void setAuthor(String author) {
+		Author = author;
+	}
+	
+	
+
+}

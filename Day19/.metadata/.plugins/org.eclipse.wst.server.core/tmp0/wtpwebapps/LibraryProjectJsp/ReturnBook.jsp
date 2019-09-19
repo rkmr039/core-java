@@ -1,0 +1,35 @@
+<%@page import="com.hcl.library.LibraryBal"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<jsp:include page="menu.jsp"></jsp:include>
+	<%
+		String name = (String) session.getAttribute("userName");
+		String[][] result = LibraryBal.showIssuedBooksBal(name);
+		out.println("<br/><br/>");
+		out.println("<form method='post' action='ReturnBooks.jsp'>");
+		out.println("<table border='1'>");
+		out.println("<tr>");
+		out.println("<th>ID</th>");
+		out.println("<th>From Date</th>");
+		out.println("<th>Return</th>");
+		out.println("</tr>");
+		for (String[] res : result) {
+			out.println("<tr>");
+			out.println("<td>" + res[0] + "</td>");
+			out.println("<td>" + res[1] + "</td>");
+			out.println("<td><input type='checkbox'  name='returnBox' value='"+ res[0] +"' /></td>");
+			out.println("</tr>");
+		}
+		out.println("</table>");
+		out.println("<br/><br/><input type='submit' value='Return' />");
+		out.println("</form>");
+	%>
+</body>
+</html>

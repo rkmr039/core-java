@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="searchForm" method="get" action="SearchBooks.jsp">
+		<center>
+			Select search Criteria:<br/><br/>
+			<input type="radio" name="searchType" value="Id"/>By Book ID<br/><br/>
+			<input type="radio" name="searchType" value="dept"/>By Department<br/><br/>
+			<input type="radio" name="searchType" value="Name"/>By Book Name<br/><br/>
+			<input type="radio" name="searchType" value="Author"/>By Author Name<br/><br/>
+			<input type="radio" name="searchType" value="TotalBooks"/>All Books<br/><br/>
+			Enter Search Value:
+			<input type="text" name="searchValue" required="required"/><br/><br/>
+			<input type="submit" value="Search" />
+		</center>
+	</form>
+</body>
+</html>

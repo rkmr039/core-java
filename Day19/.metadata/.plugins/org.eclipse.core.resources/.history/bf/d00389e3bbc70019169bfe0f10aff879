@@ -1,0 +1,37 @@
+package com.hcl.library;
+
+public class IssueBooks {
+	private String name;
+	private String[] checked;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String[] getChecked() {
+		return checked;
+	}
+	public void setChecked(String[] checked) {
+		this.checked = checked;
+	}
+	
+	public String issueBooks() {
+
+		// out.println(ids.length);
+		// out.println(ids[0]);
+		try{
+			if(checked.length == 0) {}
+		} catch(NullPointerException e) {
+	<jsp:forward page="IssueBooks.html"></jsp:forward>
+		for (String id : checked) {
+			int Id = Integer.parseInt(id);
+			boolean i = LibraryBal.issueBookBal(name,Id);
+			if(i) {
+				out.println("<br/><h5>Book ID(" + Id + ") issued.</h5><br/>");
+			} else {
+				out.println("<br/><h5>Book ID(" + Id + ") already issued.</h5><br/>");
+			}
+		} 
+	}
+}
