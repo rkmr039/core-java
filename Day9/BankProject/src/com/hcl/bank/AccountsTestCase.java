@@ -1,0 +1,118 @@
+package com.hcl.bank;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.junit.Test;
+
+public class AccountsTestCase {
+
+	@Test
+	public void testGettersAndSetters() {
+	  Accounts objAccounts = new Accounts();
+	  objAccounts.setAccountNo(1);
+	  objAccounts.setFirstName("Sai");
+	  objAccounts.setLastName("Krishna");
+	  objAccounts.setCity("Bangalore");
+	  objAccounts.setState("KA");
+	  objAccounts.setAmount(88222);
+	  objAccounts.setCheqFacil("Yes"); 
+	  objAccounts.setAccountType("Savings");
+	  objAccounts.setStatus("active");
+	  
+	  assertEquals(1, objAccounts.getAccountNo());
+	  assertEquals("Sai", objAccounts.getFirstName());
+	  assertEquals("Krishna", objAccounts.getLastName());
+	  assertEquals("Bangalore", objAccounts.getCity());
+	  assertEquals("KA", objAccounts.getState());
+	  assertEquals(88222, objAccounts.getAmount() );
+	  assertEquals("Yes", objAccounts.getCheqFacil());
+	  assertEquals("Savings", objAccounts.getAccountType()); 
+	  assertEquals("active", objAccounts.getStatus());
+	}
+	
+	@Test
+	public void testDaoConnection() {
+		assertNotNull(DaoConnection.getConnection());
+	}
+	
+	@Test
+	public void testWithdrawnAccount() {
+		assertEquals("Account Num. Not Found", AccountBal.withdrawnAccountBal(-1, 10000));
+		assertEquals("Account is Inactive", AccountBal.withdrawnAccountBal(2, 1000));
+		assertEquals("Amount Debited", AccountBal.withdrawnAccountBal(20, 1000));
+		assertEquals("Insufficient Balance", AccountBal.withdrawnAccountBal(3, 5001000));
+	}
+	
+	@Test
+	public void testDepositeAccount() {
+		assertEquals("Amount Credited", AccountBal.depositeAccountBal(1, 10000));
+		assertEquals("Account is Inactive", AccountBal.depositeAccountBal(2, 1000));
+		assertEquals("Account Num. Not Found", AccountBal.depositeAccountBal(-3, 1000));
+		
+	}
+	
+	@Test
+	public void testCloseAccount() {
+		assertEquals("Status Closed", AccountBal.closeAccountBal(4));
+		assertEquals("Account Num. Not Found", AccountBal.closeAccountBal(-4));
+	}
+	
+	@Test
+	public void testCreateAccount() {
+		Accounts objAccounts = new Accounts();
+		int accno = AccountBal.generateAccountNoBal();
+		objAccounts.setAccountNo(accno);
+		objAccounts.setFirstName("Bindu");
+		objAccounts.setLastName("Sree");
+		objAccounts.setCity("Bangalore");
+		objAccounts.setState("KA");
+		objAccounts.setAmount(88222);
+		objAccounts.setCheqFacil("Yes");
+		objAccounts.setAccountType("Savings");
+		assertEquals("Account Created Successfully",AccountBal.createAcccountBal(objAccounts));
+	}
+	
+	@Test
+	public void testSearchAccounts() {
+		assertNotNull(AccountBal.searchAccountBal(1));
+		assertNull(AccountBal.searchAccountBal(-1));
+	}
+	
+	@Test
+	public void testUpdateAccountBalance() {
+		assertEquals("Account Updated", AccountBal.updateAccountBal(1, "Chennai", "TN"));
+		assertEquals("Account Num. Not Found", AccountBal.updateAccountBal(-1, "Chennai", "TN"));
+		assertEquals("Account is Inactive", AccountBal.updateAccountBal(2, "New Delhi", "Delhi"));
+	}
+	
+	@Test
+	public void testToString() {
+		assertNotNull(new Accounts().toString());
+	}
+
+	@Test
+	public void testGenerateAccountNo() {
+		Connection con = DaoConnection.getConnection();
+		String cmd = "SELECT MAX(accountNo)+1 accno from Accounts;";
+		int accno = 0;
+		PreparedStatement pst;
+		try {
+			pst = con.prepareStatement(cmd);
+			ResultSet rs = pst.executeQuery();
+			rs.next();
+			accno = rs.getInt("accno");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		assertEquals(accno, AccountBal.generateAccountNoBal());
+		
+		
+	}
+}

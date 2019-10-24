@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form method="post" action="InfoServlet">
+	<table>
+		<tr>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+		Employ ID  : <input type="text" name="EmpInfo" id="eid"/><br/>
+		Employ Name: <input type="text" name="EmpInfo" id="ename"/><br/>
+		Hobbies : 
+		Gender  : 
+		City    : <input type="text" name="EmpInfo" id="ecity"/><br/>
+		State   : <input type="text" name="EmpInfo" id="estate"/><br/>
+		Country : <input type="text" name="EmpInfo" id="ecountry"/><br/> 
+	</form>
+</body>
+</html>

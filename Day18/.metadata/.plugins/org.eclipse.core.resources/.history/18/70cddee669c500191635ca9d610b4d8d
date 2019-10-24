@@ -1,0 +1,238 @@
+package com.hcl.inventory;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class InventryDao {
+
+  Connection con;
+  PreparedStatement pst;
+  ResultSet rs = null;
+  String cmd;
+  public boolean doLoginDao(String userName, String passWord) {
+	  con = DaoConnection.getConnection();
+		boolean result = false;
+		String cmd = "select Count(*) from Users where Username =? and Password=?;";
+		try {
+			pst =  con.prepareStatement(cmd);
+			pst.setString(1, userName);
+			pst.setString(2, passWord);
+			rs = pst.executeQuery();
+			rs.next();
+			if(rs.getInt("Count(*)") == 1) {
+				result = true;
+			} 
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+		return result;	
+  }
+  
+  /**
+   * this method will generate new orderid for each time when the addOrder() method called.
+   * @return orderid in int format.
+   */
+  
+  public int generateOrderId() {
+    con = DaoConnection.getConnection();
+    int orderid = 0;
+    String cmd = "SELECT CASE WHEN MAX(OrderId) IS NULL "
+        + " THEN 1 ELSE MAX(OrderId) + 1 END orderNo "
+        + " FROM Orders ";
+
+    try {
+      pst = con.prepareStatement(cmd);
+      ResultSet rs = pst.executeQuery();
+      if (rs.next()) {
+        orderid = rs.getInt("orderNo"); 
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+    return orderid;
+  }
+  
+  /**
+   * this method will generate new stockid for each time when the addStock() method called.
+   * @return stock id in string format.
+   */
+  
+  public String generateStockIdDao() {
+    con = DaoConnection.getConnection();
+    String stockId = "";
+    try {
+      //String cmd = "SELECT * FROM Stock ORDER BY stockid DESC LIMIT 1;";
+    	 String cmd = "SELECT max(stockid) sid from stock;";
+      pst = con.prepareStatement(cmd);
+      ResultSet rs = pst.executeQuery();	
+      if (rs.next()) {
+        String str = rs.getString("sid");
+        str = str.substring(1);
+        int tempId = Integer.parseInt(str);
+        tempId += 1;
+        stockId = String.format("S%03d", tempId);
+      } else {
+        stockId = "S001";
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+    return stockId;
+  }
+  
+  /**
+   * this method will add stock into db table.
+   * @param stock Stock object to be added.
+   * @return success message.
+   */
+  
+  public String addStockDao(Stock stock) {
+    con = DaoConnection.getConnection();
+    String result = "";
+    String cmd = "INSERT INTO Stock values(?,?,?,?);";
+    try {
+      pst = con.prepareStatement(cmd);
+      pst.setString(1, stock.getStockId());
+      pst.setString(2, stock.getItemName());
+      pst.setDouble(3, stock.getPrice());
+      pst.setInt(4, stock.getQuantityAvail());
+      pst.executeUpdate();
+      result = "Stock Added";
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+    return result;
+  }
+  
+  /**
+   * this will be used for searching stock from db.
+   * @param stockId for searching stock from DB.
+   * @return Stock or null.
+   */
+  
+  public Stock searchStockDao(String stockId) {
+    con = DaoConnection.getConnection();
+    String cmd = "SELECT * FROM Stock WHERE stockid = ?;";
+    Stock stock = null;
+    try {
+      pst = con.prepareStatement(cmd);
+      pst.setString(1, stockId);
+      ResultSet rs = pst.executeQuery();
+      if (rs.next()) {
+        stock = new Stock();
+        stock.setStockId(stockId);
+        stock.setItemName(rs.getString("ItemName"));
+        stock.setPrice(rs.getDouble("Price"));
+        stock.setQuantityAvail(rs.getInt("QuantityAvail"));
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+    return stock;
+  }
+  
+  /**
+   * this will place order for stock item.
+   * @param stockId is used for searching the availability of item in stock. 
+   * @param qnty quantity of item ordered.
+   * @return success or error message.
+   */
+  public String placeOrderDao(String stockId, int qnty) {
+    con = DaoConnection.getConnection();
+    int orderID = InventryBal.generateOrderId();
+    String result = "";
+    Stock stock = InventryBal.searchStockBal(stockId);
+    ResultSet rs;
+    try {
+      if (stock != null) {
+        int tempQnty = stock.getQuantityAvail();
+        if (qnty != 0 && qnty <= tempQnty) {
+          String cmd = "INSERT INTO Orders values(?,?,?,?);";
+          pst = con.prepareStatement(cmd);
+          pst.setInt(1, orderID);
+          pst.setString(2, stockId);
+          pst.setInt(3, qnty);
+          double price = stock.getPrice();
+          double billAmt = qnty * price;
+          pst.setDouble(4, billAmt);
+          pst.executeUpdate();
+          result = "Order Placed";
+          // update Stock Records
+          cmd = "UPDATE Stock set QuantityAvail = ? WHERE stockId = ?";
+          pst = con.prepareStatement(cmd);
+          pst.setInt(1, (tempQnty - qnty));
+          pst.setString(2, stockId);
+          pst.executeUpdate();
+          // Update Gross Amount Records from amount table
+          cmd = "SELECT Gamt FROM amount";
+          pst = con.prepareStatement(cmd);
+          rs = pst.executeQuery();
+          if (rs.next()) {
+            double amount = rs.getInt("Gamt");
+            amount = amount + billAmt;
+            cmd = "UPDATE amount set Gamt = ?";
+            pst = con.prepareStatement(cmd);
+            pst.setDouble(1, amount);
+            pst.executeUpdate();  
+          }
+        } else {
+          result = "Stock Not Available";
+        }
+      } else {
+        result = "Stock ID Incorrect";
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+    return result; 
+  }
+
+  public List<Stock> showStockDao() {
+	 String cmd = "select * from stock"; 
+	 con = DaoConnection.getConnection();
+	 List<Stock> stocks = new ArrayList<Stock>();
+	 try {
+		pst = con.prepareStatement(cmd);
+		rs = pst.executeQuery();
+		while(rs.next()) {
+			Stock stock = new Stock();
+			stock.setStockId(rs.getString("stockid"));
+			stock.setItemName(rs.getString("ItemName"));
+			stock.setPrice(rs.getDouble("Price"));
+			stock.setQuantityAvail(rs.getInt("QuantityAvail"));
+			stocks.add(stock);	
+		}
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	 
+	return stocks; 
+  }
+
+  public String updateStockDao(String stockid,double price,int qnty) {
+	  String result = "Not Updated";	  
+	  
+	  con = DaoConnection.getConnection();
+	  try {  
+        cmd = "update stock set price=?, QuantityAvail=? where stockid=?;";  
+		pst = con.prepareStatement(cmd);
+		pst.setDouble(1,price);
+		pst.setInt(2,qnty);
+		pst.setString(3, stockid);
+		if(pst.executeUpdate() == 1) {
+			result = "****Stock Updated *****";
+		}
+		
+	} catch (SQLException e) {
+		result = "*****StockId Not Found*******";
+	} 
+	  return result;
+  }
+}

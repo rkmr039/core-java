@@ -1,0 +1,31 @@
+package com.hcl.emp;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+public class EmployCrud {
+	public List<Employ> showEmploy() {
+		SessionFactory sf = HibernateUtil.getConnection();
+		Session s = sf.openSession();
+		Query q = s.createQuery("from Employ");
+		List<Employ> empList = q.list();
+		return empList;
+	}
+	public static Employ searchEmploy(int empno) {
+		SessionFactory sf = HibernateUtil.getConnection();
+		Session s = sf.openSession();
+		Query q = s.createQuery("from Employ where empno = "+empno);
+		List<Employ> lstEmploy = q.list();
+		Employ e = null;
+		if(lstEmploy.size() != 0) {
+			e = lstEmploy.get(0);
+		}
+		return e;
+	}
+	public static boolean insertEmploy() {
+		
+	}
+}

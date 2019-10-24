@@ -1,0 +1,26 @@
+package com.hcl.obj;
+
+public class Agent {
+
+	public StringBuilder show(String agentId,
+								String fullName,
+								int martialStatus,
+								String zipcode){
+		StringBuilder sbResult = new StringBuilder();
+		
+		return sbResult;
+		
+		
+	}
+	public static void main(String[] args) {
+		
+		int married = 0;
+		String agentId = "A01";
+		String zipcode = "2938475";
+		String fullName = "RISHAB KUMAR";
+		
+		
+		System.out.println(new Agent().show(agentId, fullName, married, zipcode));
+		
+	}
+}

@@ -1,0 +1,38 @@
+package com.hcl.collections;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class SetDemo {
+
+	public static void main(String[] args) {
+		Set s =new HashSet();
+		s.add("Rishab");
+		s.add("Yash");
+		s.add("Tushar");
+		s.add("Amit");
+		s.add("Anand");
+
+		s.add("Rishab");
+		s.add("Yash");
+		s.add("Tushar");
+		s.add("Amit");
+		s.add("Anand");
+
+		s.add("Rishab");
+		s.add("Yash");
+		s.add("Tushar");
+		s.add("Amit");
+		s.add("Anand");
+
+		s.add("Rishab");
+		s.add("Yash");
+		s.add("Tushar");
+		s.add("Amit");
+		s.add("Anand");
+		
+		System.out.println("HashSet Data");
+		s.forEach(System.out::println);
+		
+	}
+}

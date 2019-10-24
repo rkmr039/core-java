@@ -1,0 +1,20 @@
+package com.hcl.inheritance;
+
+class First {
+
+	public void show(){
+		System.out.println("Base Class Show() method");
+	}
+}
+class Second extends First {
+
+	public void show(){
+		System.out.println("Child Class Show() method");
+	}
+}
+public class InhDemo{
+	public static void main(String[] args) {
+		First obj = new Second();
+		obj.show();
+	}
+}

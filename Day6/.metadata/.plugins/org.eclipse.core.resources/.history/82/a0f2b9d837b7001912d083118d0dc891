@@ -1,0 +1,16 @@
+package com.hcl.generics;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class GenEmploy {
+  /**
+   * main() .
+   * @param args .
+   */
+
+  public static void main(String[] args) {
+    List<Employ> lstEmploy = new ArrayList<Employ>();
+    
+}
+}

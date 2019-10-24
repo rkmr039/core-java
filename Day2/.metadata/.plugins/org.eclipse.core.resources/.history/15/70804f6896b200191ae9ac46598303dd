@@ -1,0 +1,12 @@
+package com.hcl.boxing;
+
+public class ConTest {
+
+	int a,b;
+
+	public ConTest() {
+		this.a = 12;
+		this.b = 15;
+	}
+	
+}

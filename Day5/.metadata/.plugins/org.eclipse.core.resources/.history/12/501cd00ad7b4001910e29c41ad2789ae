@@ -1,0 +1,12 @@
+package com.hcl.assertions;
+
+public class AssertDemo {
+  /**
+   * main.
+   * @param args .
+   */
+
+  public static void main(String[] args) {
+	
+}
+}

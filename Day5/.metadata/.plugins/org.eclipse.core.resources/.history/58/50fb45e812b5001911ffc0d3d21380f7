@@ -1,0 +1,8 @@
+package com.hcl.collections;
+
+public class ResourceBundle {
+
+	public static void main(String[] args) {
+		PropDemo rb = PropDemo.getBundle("hcltraining");
+	}
+}

@@ -1,0 +1,10 @@
+package com.hcl.inheritance;
+
+
+
+public class SuperCon {
+
+	public static void main(String[] args) {
+		
+	}
+}

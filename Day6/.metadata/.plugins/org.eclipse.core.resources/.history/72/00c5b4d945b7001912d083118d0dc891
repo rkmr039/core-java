@@ -1,0 +1,21 @@
+package com.hcl.lambdaexpressions;
+
+import java.util.ArrayList;
+
+import java.util.List;
+
+interface IHello{
+  void sayHello();
+}
+public class LambdaDemo2 {
+  /**
+   * main() .
+   * @param args .
+   */
+
+  public static void main(String[] args) {
+    IHello h1 = () -> {
+    	System.out.println("Say Hello from Rishab");
+    };
+  }
+}

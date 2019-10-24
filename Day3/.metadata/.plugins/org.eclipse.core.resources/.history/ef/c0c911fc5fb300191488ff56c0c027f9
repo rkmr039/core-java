@@ -1,0 +1,11 @@
+package com.hcl.interfacePckg;
+
+interface ITraining{
+	void name();
+	void email();
+}
+
+
+public class InterfaceDemo {
+
+}

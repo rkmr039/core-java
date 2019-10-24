@@ -1,0 +1,16 @@
+package com.hcl.varargs;
+
+public class Attendence {
+
+	public static void show(String... name){ // varying arguments
+		for(String s: name ){
+			System.out.print(s);
+		}
+	}
+	public static void main(String[] args) {
+		show();
+		show("YASH\r\n");
+		show("ANAND"," RISHAB\r\n");
+		show("1","2","3","4","5");
+	}
+}

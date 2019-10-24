@@ -1,0 +1,28 @@
+package com.hcl.customer;
+
+public class Customer {
+
+	private int custId;
+	private String custName;
+	private double annualIncom;
+	private double modalPremium;
+	private int paymentMode;
+	
+	/*
+	 * custId not negative
+	 * custName not less then 5 chars
+	 * annualIncome 20000 to 1000000
+	 * modelPayment from 1000 to 50000
+	 * paymentMode 1 or 2 3  
+	 */
+	
+	/*
+	 * addCustomer()
+	 * showCustomer()
+	 * searchCVustomer()
+	 * deleteCustomer()
+	 * updateCustomer()
+	 * storeCustomer()
+	 * readCustomer()
+	 */
+}

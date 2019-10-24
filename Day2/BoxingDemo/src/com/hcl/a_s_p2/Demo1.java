@@ -1,0 +1,14 @@
+package com.hcl.a_s_p2;
+
+import com.hcl.access_specifier.BaseClass;
+
+public class Demo1 {
+
+	public static void main(String[] args) {
+		BaseClass obj = new BaseClass();
+		//System.out.println(obj.a);
+		//System.out.println(obj.b);
+		System.out.println(obj.c);
+		//System.out.println(obj.d);
+	}
+}

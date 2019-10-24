@@ -1,0 +1,56 @@
+<%@page import="java.util.Date"%>
+<%@page import="com.hcl.hms.Booking"%>
+<%@page import="com.hcl.hms.Room"%>
+<%@page import="com.hcl.hms.HotelCrud"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+	HotelCrud crud = new HotelCrud();
+	// working perfectly
+	/* out.println(crud.generateRoomId()); */
+	
+	// working perfectly
+	/* Room room = new Room();
+	room.setRoomId(crud.generateRoomId());
+	room.setType("Double");
+	room.setStatus("Available");
+	room.setCostPerDay(1250);
+	out.println(crud.addRooms(room)); */
+	
+	// working perfectly
+	// out.println(crud.generateBookingId());
+	
+	// working perfectly
+	// crud.getAvailableRooms();
+	
+	// out.println(crud.updateRoomStatus("R001","Booked"));
+	
+	/* Room room = crud.getRoomByid("R001");
+	out.println(room.getRoomId());
+	out.println(room.getCostPerDay());
+	out.println(room.getStatus());
+	out.println(room.getType()); */
+	
+	Booking obj = new Booking();
+	
+	obj.setBookId(crud.generateBookingId());
+	obj.setRoomId("R001");
+	obj.setCustName("Rakesh Mehra");
+	obj.setCity(request.getParameter("Delhi"));
+	
+	
+	Date bookDate = sdf.parse("");
+	obj.setBookDate(bookDate);
+	
+	out.println(crud.bookRoom(obj));  
+	
+	%>
+</body>
+</html>

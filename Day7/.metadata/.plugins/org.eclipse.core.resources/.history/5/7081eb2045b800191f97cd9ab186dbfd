@@ -1,0 +1,162 @@
+package com.hcl.customer;
+
+import java.util.List;
+import java.util.ResourceBundle;
+import java.util.Scanner;
+
+public class CustomerMain {
+
+  static ResourceBundle rb = ResourceBundle.getBundle("project");
+  /**
+   * delete Customer method().
+   */
+
+  public static void deleteCustomer() {
+    int sno;
+    Scanner sc = new Scanner(System.in);
+    System.out.println(rb.getString("entersno"));
+    sno = sc.nextInt();
+    CustomerBal obj = new CustomerBal();
+    String res = obj.deleteCustomerBal(sno);
+    System.out.println(res);
+  }
+
+  /**
+   * update Customer method().
+   */
+ 
+  public static void updateCustomer() {
+    Customer objCustomer = new Customer();
+    Scanner sc = new Scanner(System.in);
+    System.out.println(rb.getString("entersno"));
+    objCustomer.setCustId(Integer.parseInt(sc.nextLine()));
+    System.out.println(rb.getString("entername"));
+    objCustomer.setCustName(sc.nextLine());
+    System.out.println(rb.getString("enterAnnIncom"));
+    objCustomer.setAnnualIncom(Integer.parseInt(sc.nextLine()));
+    System.out.println(rb.getString("enterModelPre"));
+    objCustomer.setModalPremium(Double.parseDouble(sc.nextLine()));
+    System.out.println(rb.getString("enterPayMode"));
+    objCustomer.setPaymentMode(Integer.parseInt(sc.nextLine())); 
+    CustomerBal obj = new CustomerBal();
+    String res = obj.updateCustomerBal(objCustomer);
+    System.out.println(res);
+  }
+
+  /**
+   * show list of Customers available .
+   */
+  
+  public static void showCustomer() {
+    CustomerBal obj = new CustomerBal();
+    List<Customer> lstCustomer = obj.showCustomerBal();
+    for (Customer Customer : lstCustomer) {
+      System.out.println(Customer);
+    }
+  }
+
+  /**
+   * search Customer on the basis of sno.
+   */
+  
+  public static void searchCustomer() {
+    int sno;
+    System.out.println(rb.getString("entersno"));
+    Scanner sc = new Scanner(System.in);
+    sno = sc.nextInt();
+    CustomerBal obj = new CustomerBal();
+    Customer objCustomer = obj.searchCustomerBal(sno);
+    if (objCustomer != null) {
+      System.out.println(objCustomer);
+    } else {
+      System.out.println(rb.getString("notfound"));
+    }
+  }
+
+  /**
+   * method for inserting Customer into list.
+   */
+  
+  public static void addCustomer() {
+    
+    Customer objCustomer = new Customer();
+    Scanner sc = new Scanner(System.in);
+    System.out.println(rb.getString("entersno"));
+    objCustomer.setCustId(Integer.parseInt(sc.nextLine())); // NumberFormateException
+    System.out.println(rb.getString("entername"));
+    objCustomer.setCustName(sc.nextLine());
+    System.out.println(rb.getString("enterAnnIncome"));
+    objCustomer.setAnnualIncom(Integer.parseInt(sc.nextLine()));
+    System.out.println(rb.getString("enterModelPre"));
+    objCustomer.setModalPremium(Double.parseDouble(sc.nextLine()));
+    System.out.println(rb.getString("enterPayMode"));
+    objCustomer.setPaymentMode(Integer.parseInt(sc.nextLine()));
+    CustomerBal obj = new CustomerBal();
+    try {
+      boolean res = obj.addCustomerBal(objCustomer);
+      if (res == true) {
+        System.out.println(rb.getString("added"));
+      }
+    } catch (CustomerExceptions e) {
+      System.out.println(e.getMessage());
+    }
+  }
+  
+  public static void storeCustomer() {
+	  new CustomerBal().storeCustomer();
+  }
+  
+  public static void displayCustomer() {
+	  new CustomerBal().displayCustomer();
+	}
+
+  /**
+   * main().
+   * @param args .
+   */
+  
+  public static void main(String[] args) {
+    int ch;
+    Scanner sc = new Scanner(System.in);
+    do {
+      System.out.println(rb.getString("opt"));
+      System.out.println(rb.getString("dashes"));
+      System.out.println(rb.getString("opt1"));
+      System.out.println(rb.getString("opt2"));
+      System.out.println(rb.getString("opt3"));
+      System.out.println(rb.getString("opt4"));
+      System.out.println(rb.getString("opt5"));
+      System.out.println(rb.getString("opt6"));
+      System.out.println(rb.getString("opt7"));
+      System.out.println(rb.getString("opt8"));
+      System.out.println(rb.getString("enterchoice"));
+      ch = sc.nextInt();
+      switch (ch) {
+        case 1:
+          addCustomer();
+          break;
+        case 2:
+          showCustomer();
+          break;
+        case 3:
+          searchCustomer();
+          break;
+        case 4:
+          updateCustomer();
+          break;
+        case 5:
+          deleteCustomer();
+          break;
+        case 6:
+        	storeCustomer();
+        case 7:
+        	displayCustomer();
+        case 8:
+        case 9:
+        	return;
+        default:
+          System.out.println(rb.getString("opt9"));
+      }
+    } while (ch != 6);
+  }
+}

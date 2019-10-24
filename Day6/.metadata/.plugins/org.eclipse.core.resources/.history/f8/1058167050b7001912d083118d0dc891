@@ -1,0 +1,31 @@
+package com.hcl.lambdaexpressions;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class LambdaFilterDemo {
+  /**
+   * main() .
+   * @param args .
+   */
+
+  public static void main(String[] args) {
+    List<Product> list = new ArrayList<Product>();
+    
+    // Adding Products
+    list.add(new Product(1, "HCL LAPTOP", 45000));
+    list.add(new Product(2, "DELL LAPTOP", 10004));
+    list.add(new Product(3, "SOCY MUSIC PLAYER", 5000));
+    list.add(new Product(4, "SAMSUNG MOBILE", 50000));
+    
+    // stream() method of Stream class that extends Collection class
+    System.out.println("Sorting by price..."); 
+    list.stream().filter(p -> p.price >= 10000).forEach(x -> {
+    	System.out.println(x);
+    });
+    System.out.println("Names start with S...");
+    list.stream().filter(p -> p.name.startsWith("S")).forEach( x -> {
+    	System.out.println(x);
+    });
+}
+}

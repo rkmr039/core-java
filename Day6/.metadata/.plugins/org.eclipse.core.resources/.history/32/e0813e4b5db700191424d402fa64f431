@@ -1,0 +1,10 @@
+package com.hcl.lambdaexpressions;
+
+import java.util.List;
+
+public class LambdaLimit {
+  public static void main(String[] args) {
+	List<Integer> lstdata = new List<Inetegr>();
+	
+}
+}

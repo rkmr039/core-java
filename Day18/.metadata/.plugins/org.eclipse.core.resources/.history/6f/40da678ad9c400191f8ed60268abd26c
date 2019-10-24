@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<a href="Add.jsp" >Add Stock</a>
+	<a href="Search.jsp">Search Stock</a>&nbsp;&nbsp;&nbsp;
+	<a href="Show.jsp">Show Stock</a>&nbsp;&nbsp;&nbsp;
+	<a href="Update.jsp">Update Stock</a>&nbsp;&nbsp;&nbsp;
+	<a href="Place.jsp">Deposit Money</a>&nbsp;&nbsp;&nbsp;
+</body>
+</html>

@@ -1,0 +1,33 @@
+package com.hcl.jdbcdemo;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class EmployShow {
+  /**
+   * main() .
+   * @param args .
+   *
+   */
+
+  public static void main(String[] args) {
+    Connection con = GetDbConnection.getConnection();
+    try {
+		Statement st = con.createStatement();
+		ResultSet rs = st.executeQuery("SELECT * FROM Employ");
+		
+		while (rs.next()) {
+			System.out.print(rs.getInt("empno"));
+			System.out.print(" " + rs.getString("name"));
+			System.out.print(" " + rs.getString("dept"));
+			System.out.print(" " + rs.getString("desig"));
+			System.out.println(" " + rs.getInt("basic"));
+		}
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+  }
+}

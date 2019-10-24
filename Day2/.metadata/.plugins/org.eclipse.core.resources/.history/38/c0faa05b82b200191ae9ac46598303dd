@@ -1,0 +1,18 @@
+package com.hcl.boxing;
+
+public class BoxStudent {
+
+	public void show(Object obj){
+		Employ e = (Employ)obj;
+		System.out.println(e);
+	}
+	public static void main(String[] args) {
+		Employ objEmploy = new Employ();
+		objEmploy.empno = 1;
+		objEmploy.name="RISHAB";
+		objEmploy.basic=15005;
+		
+		
+		new BoxStudent().show(objEmploy);
+	}
+}

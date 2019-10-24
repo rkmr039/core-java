@@ -1,0 +1,11 @@
+package com.hcl.students;
+
+public class SearchStudent {
+	public static void main(String[] args) {
+		
+		System.out.println("Select Operation to Perform");
+		System.out.println("1.Search\n2.Edit\n3.Update\n4.Delete");
+		System.out.println();
+	}
+
+}

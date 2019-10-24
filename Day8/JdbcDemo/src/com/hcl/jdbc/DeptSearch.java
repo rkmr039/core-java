@@ -1,0 +1,44 @@
+package com.hcl.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class DeptSearch {
+  /**
+   * main() entry point. 
+   * @param args command line arguments. not required now.
+   */
+
+  public static void main(String[] args) {
+    int deptno;
+    System.out.println("Enter Department No.");
+    Scanner sc = new Scanner(System.in);
+    deptno = sc.nextInt();
+
+    // load the Driver
+    try {
+      Class.forName("com.mysql.jdbc.Driver");
+      Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sqlpractice",
+            "root","root");
+      String cmd = "SELECT * FROM dept WHERE deptno =?";
+      PreparedStatement ps = con.prepareStatement(cmd);
+      ps.setInt(1,  deptno);
+      ResultSet rs = ps.executeQuery();
+      if (rs.next()) {
+        System.out.println("Department Name       : " + rs.getString("dname"));
+        System.out.println("Department Location   : " + rs.getString("loc"));
+      } else {
+        System.out.println("======= Record Not Found======");
+      }
+    } catch (ClassNotFoundException e) {
+      e.printStackTrace();
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+  }
+ 
+}

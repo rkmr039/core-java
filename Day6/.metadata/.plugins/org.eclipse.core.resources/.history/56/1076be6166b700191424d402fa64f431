@@ -1,0 +1,11 @@
+package com.hcl.studentsproject;
+
+public class StudentBAL {
+  StringBuilder sb = new StringBuilder();
+  public boolean addStudent(Student obj) {
+	  boolean isAdded = true;
+	  
+	  
+	  return isAdded; 
+  }
+}

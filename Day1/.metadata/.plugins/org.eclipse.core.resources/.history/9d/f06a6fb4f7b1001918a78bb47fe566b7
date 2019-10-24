@@ -1,0 +1,16 @@
+package com.hcl.obj;
+
+public class Employ {
+
+	public Employ[] showEmploy(){
+		Employ[] arrEmploy = new Employ[3];
+		
+		
+		
+		return arrEmploy;
+	}
+	public static void main(String[] args) {
+		
+	}
+	
+}

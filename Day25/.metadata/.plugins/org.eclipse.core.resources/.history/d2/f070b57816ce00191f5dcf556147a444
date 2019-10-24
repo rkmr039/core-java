@@ -1,0 +1,27 @@
+<%@page import="com.hcl.emp.EmployCrud"%>
+<%@page import="com.hcl.emp.Employ"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+		Employ e = new Employ();
+		int empno = Integer.parseInt(request.getParameter("empno"));
+		String name = request.getParameter("name");
+		String dept = request.getParameter("dept");
+		String desig = request.getParameter("desig");
+		int basic = Integer.parseInt(request.getParameter("basic"));
+		boolean flag = EmployCrud.insertEmploy(e);
+		if(flag) { 
+			%> <p>EMPLOY CREATED SUCCESSFULLY</p>
+			<% } else { 
+				%> <p>NOT CREATED </p>
+		 <% } %>
+	%>
+</body>
+</html>

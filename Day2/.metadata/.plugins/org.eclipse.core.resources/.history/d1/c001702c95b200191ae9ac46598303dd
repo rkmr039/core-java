@@ -1,0 +1,20 @@
+package com.hcl.boxing;
+
+public class ConDemo {
+
+	static {
+		System.out.println("STATIC Constructor....");
+		show();
+	}
+	
+	public ConDemo() {
+		System.out.println("Default Constructor...");
+	}
+	public static void show(){
+		System.out.println("Hello Before Main...");
+	}
+
+	public static void main(String[] args) {
+		
+	}
+}

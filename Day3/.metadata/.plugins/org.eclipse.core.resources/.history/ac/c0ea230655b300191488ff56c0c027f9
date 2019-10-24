@@ -1,0 +1,12 @@
+package com.hcl.inheritance;
+
+class BaseClass{
+	
+}
+
+public class SuperCon {
+
+	public static void main(String[] args) {
+		
+	}
+}

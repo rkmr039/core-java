@@ -1,0 +1,14 @@
+package com.hcl.java;
+
+public class LoopDemo {
+	
+	public void show(){
+		
+	}
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

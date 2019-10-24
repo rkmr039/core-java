@@ -1,0 +1,15 @@
+package com.hcl.lambdaexpressions;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class LambdaProduct {
+  public static void main(String[] args) {
+    List<Product> list = new ArrayList<Product>();
+    
+    // Adding Products
+    list.add(new Product(1, "HCL LAPTOP", 45000));
+    list.add(new Product(2, "HP LAPTOP", 45000));
+    list.add(new Product(3, "SOCY MUSIC PLAYER", 5000));
+}
+}

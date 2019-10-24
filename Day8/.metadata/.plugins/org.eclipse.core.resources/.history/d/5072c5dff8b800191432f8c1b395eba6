@@ -1,0 +1,29 @@
+package com.hcl.jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class EmployShow {
+
+  public static void main(String[] args) {
+	Connection con = new DaoConnection().getConnection();
+	String cmd = "Select * from Employ";
+	
+	try {
+		PreparedStatement ps = con.prepareStatement(cmd);
+		ResultSet rs = ps.executeQuery();
+		while (rs.next()) {
+			System.out.println("Empno " + rs.getInt("empno"));
+			System.out.println("Employ Name       : " + rs.getString("name"));
+	        System.out.println("Employ Department : " + rs.getString("dept"));
+	        System.out.println("Designation       : " + rs.getString("desig"));
+	        System.out.println("Salary            : " + rs.getInt("basic"));
+	        System.out.println("------------------------------------------");
+		}
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+}
+}

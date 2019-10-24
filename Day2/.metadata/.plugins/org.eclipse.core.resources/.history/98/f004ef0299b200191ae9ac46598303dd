@@ -1,0 +1,36 @@
+package com.hcl.boxing;
+
+import java.sql.Time;
+
+public class TimeZone {
+	
+	int hrs;
+	int mns;
+	public TimeZone(int hrs, int mns) {
+		
+		this.hrs = hrs;
+		this.mns = mns;
+	}
+	public TimeZone addTimeZones(TimeZone t1){
+		int hrs = t1.hrs + this.hrs;
+		int mns = t1.mns + this.mns;
+		TimeZone temp = new TimeZone(hrs, mns);
+		return temp;
+	}
+	@Override
+	public String toString() {
+		return "TimeZone [hrs=" + hrs + ", mns=" + mns + "]";
+	}
+	public static void main(String[] args) {
+		TimeZone t1 = new TimeZone(3, 40);
+		TimeZone t2 = new TimeZone(2, 35);
+		TimeZone t3 = new TimeZone(6, 15);
+		
+		System.out.println();
+		
+	}
+	
+	
+	
+
+}

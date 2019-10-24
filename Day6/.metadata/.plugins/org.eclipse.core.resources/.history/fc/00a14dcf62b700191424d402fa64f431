@@ -1,0 +1,10 @@
+package com.hcl.students;
+
+public class StudentExceptions extends Exception {
+  
+  public StudentExceptions(String error) {
+    super(error);
+  }
+  
+
+}

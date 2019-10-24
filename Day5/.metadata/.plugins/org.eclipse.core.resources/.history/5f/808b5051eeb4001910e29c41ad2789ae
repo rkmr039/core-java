@@ -1,0 +1,11 @@
+package com.hcl.files;
+
+public class Student {
+public static void main(String[] args) {
+	int sno;
+	String name;
+	String city;
+	double cgp;
+	
+}
+}

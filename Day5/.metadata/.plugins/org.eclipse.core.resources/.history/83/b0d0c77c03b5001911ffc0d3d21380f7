@@ -1,0 +1,17 @@
+package com.hcl.collections;
+
+import java.util.SortedSet;
+
+public class SortedSetDemo {
+
+	public static void main(String[] args) {
+		SortedSet s = new SortedSet();
+		s.add("RISHAB");
+		s.add("YASH");
+		s.add("Lakshmi");
+		s.add("Tushar");
+		System.out.println("Sorted Data");
+		s.forEach(System.out::println);;
+		
+	}
+}

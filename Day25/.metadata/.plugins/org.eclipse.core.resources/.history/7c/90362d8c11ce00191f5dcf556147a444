@@ -1,0 +1,12 @@
+package com.hcl.emp;
+
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+
+public class EmployCrud {
+	public List<Employ> showEmploy() {
+		SessionFactory sf = HibernateUtil.getConnection();
+		Session s = sf.openSession();
+	}
+}

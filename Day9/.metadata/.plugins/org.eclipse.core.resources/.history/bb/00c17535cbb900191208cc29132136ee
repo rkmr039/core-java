@@ -1,0 +1,8 @@
+package com.hcl.inventry;
+
+public class PlaceOrderMain {
+  
+  public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in;
+}
+}

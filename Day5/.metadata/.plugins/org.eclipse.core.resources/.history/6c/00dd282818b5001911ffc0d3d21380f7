@@ -1,0 +1,28 @@
+package com.hcl.collections;
+
+
+public class Emp { 
+  int empno;
+  String name;
+  transient double basic;
+  /**
+   * constructor().
+   * @param empno .
+   * @param name .
+   * @param basic .
+   */
+
+  public Emp(int empno, String name, double basic) { 
+    this.empno = empno;
+    this.name = name;
+    this.basic = basic; // to hide the data (minor security)
+  }
+  /**
+   * toString() .
+   */
+
+  @Override
+  public String toString() {
+    return "Employ [empno=" + empno + ", name=" + name + ", basic=" + basic + "]";
+  }
+}

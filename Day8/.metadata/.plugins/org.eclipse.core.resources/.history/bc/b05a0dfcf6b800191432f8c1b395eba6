@@ -1,0 +1,12 @@
+package com.hcl.jdbc;
+
+public class DaoConnection {
+  /**
+   * main entry point. 
+   * @param args .
+   */
+
+  public static void main(String[] args) {
+	
+  }
+}

@@ -1,0 +1,51 @@
+package com.hcl.jdbcstudent;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class StudentInsert {
+  /**
+   * main method .
+   * @param args .
+   */
+
+  public static void main(String[] args) {
+    Connection con = new DaoConnection().getConnection();
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter Student Number");
+    int sno = Integer.parseInt(sc.nextLine());
+    System.out.println("Enter Student Name");
+    String name = sc.nextLine();
+    System.out.println("Enter Subject 1 Marks");
+    int sub1 = Integer.parseInt(sc.nextLine());
+    System.out.println("Enter Subject 2 Marks");
+    int sub2 = Integer.parseInt(sc.nextLine());
+    System.out.println("Enter Subject 3 Marks");
+    int sub3 = Integer.parseInt(sc.nextLine());
+   
+    String cmd = "insert into Student(sno, name,sub1,sub2,sub3) values (?,?,?,?,?)";
+    
+    try {
+      PreparedStatement ps = con.prepareStatement(cmd);
+      
+      ps.setInt(1, sno);
+      ps.setString(2, name);
+      ps.setInt(3, sub1);
+      ps.setInt(4, sub2);
+      ps.setInt(5, sub3);
+      
+      ps.executeUpdate();
+      System.out.println("Inserted Sucessfully");
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+    try {
+      con.close();
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+  }
+}

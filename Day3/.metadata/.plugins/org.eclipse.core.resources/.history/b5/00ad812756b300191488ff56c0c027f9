@@ -1,0 +1,35 @@
+package com.hcl.inheritance;
+
+class Employ {
+	int empno;
+	String name;
+	double basic;
+
+	public Employ() {
+	}
+
+	public Employ(int empno, String name, double basic) {
+		this.empno = empno;
+		this.name = name;
+		this.basic = basic;
+	}
+
+	@Override
+	public String toString() {
+		return "Employ [empno=" + empno + ", name=" + name + ", basic=" + basic + "]";
+	}
+
+}
+
+class Rishab extends Employ {
+
+	
+}
+
+
+public class SuperCon {
+
+	public static void main(String[] args) {
+
+	}
+}

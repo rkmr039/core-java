@@ -1,0 +1,26 @@
+package com.hcl.inheritance;
+
+class BaseClass{
+	int empno;
+	String name;
+	double basic;
+	
+	public BaseClass(int empno, String name, double basic) {
+		this.empno = empno;
+		this.name = name;
+		this.basic = basic;
+	}
+
+	@Override
+	public String toString() {
+		return "BaseClass [empno=" + empno + ", name=" + name + ", basic=" + basic + "]";
+	}
+	
+}
+
+public class SuperCon {
+
+	public static void main(String[] args) {
+		
+	}
+}

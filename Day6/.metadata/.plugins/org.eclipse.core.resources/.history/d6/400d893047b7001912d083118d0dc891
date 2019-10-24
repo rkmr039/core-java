@@ -1,0 +1,23 @@
+package com.hcl.lambdaexpressions;
+
+// FunctionalInterface can have only one method
+@FunctionalInterface
+interface ICalc {
+	int calc(int a, int b);
+}
+
+public class LambdaDemo3 {
+	/**
+	 * main() .
+	 * 
+	 * @param args
+	 *            .
+	 */
+
+	public static void main(String[] args) {
+		ICalc add = (a,b) -> {
+			System.out.println("Sum of a and b : ");
+			return a + b;
+		};
+	}
+}

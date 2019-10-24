@@ -1,0 +1,23 @@
+package com.hcl.boxing;
+
+public class ConDemo {
+
+	static int a; // get memory in heap area
+	static { // runs before main
+		System.out.println("STATIC Constructor....");
+		a = 5;
+		show(a);
+	}
+	
+	public ConDemo() {
+		System.out.println("Default Constructor...");
+	}
+	public static void show(int a){
+		System.out.println("Hello Before Main..."+a);
+	}
+
+	public static void main(String[] args) {
+	
+		new ConDemo();// this will run default constructor
+	}
+}

@@ -1,0 +1,16 @@
+package com.hcl.collections;
+
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+public class SortEmploy {
+
+	public static void main(String[] args) {
+		SortedSet s = new TreeSet();
+		
+		s.add(new Employ(1, "RISHAB", 23346));
+		s.add(new Employ(2, "RISHAB", 23346));
+		s.add(new Employ(3, "RISHAB", 23346));
+		s.add(new Employ(4, "RISHAB", 23346));
+	}
+}

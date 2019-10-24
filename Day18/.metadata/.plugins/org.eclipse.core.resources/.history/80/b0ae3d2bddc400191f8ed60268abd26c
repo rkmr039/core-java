@@ -1,0 +1,14 @@
+package com.hcl.inventory;
+
+public class SearchStock {
+  private int stockId;
+	public int getStockId() {
+	return stockId;
+}
+public void setStockId(int stockId) {
+	this.stockId = stockId;
+}
+	public Stock searchStock() {
+		return InventryBal.searchStockBal(stockid);
+	}
+}

@@ -1,0 +1,25 @@
+package com.hcl.daterange;
+
+import java.util.Calendar;
+import java.util.Date;
+
+public class ShowDateRange {
+	public static void main(String[] args) {
+		/*Date startDate = new Date();
+		Date endDate = new Date("2016-03-02");
+		System.out.println(startDate);
+		System.out.println(endDate);*/
+		Calendar start = Calendar.getInstance();
+		start.setTime(startDate);
+
+		Calendar end = Calendar.getInstance();
+		end.setTime(endDate);
+
+		while( !start.after(end)){
+		    Date targetDay = start.getTime();
+		    // Do Work Here
+
+		    start.add(Calendar.DATE, 1);
+		}
+	}
+}

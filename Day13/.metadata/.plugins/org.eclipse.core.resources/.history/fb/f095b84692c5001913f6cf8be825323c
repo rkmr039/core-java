@@ -1,0 +1,121 @@
+package com.hcl.library;
+
+import static org.junit.Assert.*;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.junit.Test;
+
+public class LibraryTestCases {
+
+	@Test
+	public void bookGetterSetterTest (){
+		Book obj = new Book();
+		obj.setId(90);
+		obj.setName("Test");
+		obj.setAuthor("DenissRitchi");
+		obj.setDept("Testing");
+		obj.setEdition("5th");
+		obj.setNos(20);
+		
+		assertEquals(90, obj.getId());
+		assertEquals("Test", obj.getName());
+		assertEquals("DenissRitchi", obj.getAuthor());
+		assertEquals("Testing", obj.getDept());
+		assertEquals("5th", obj.getEdition());
+		assertEquals(20, obj.getNos());
+		
+	}
+
+	@Test
+	public void testDaoConnection() {
+		assertNotNull(DaoConnection.getConnection());
+	}
+	
+	@Test
+	public void loginTest() {
+		User user = new User();
+		user.setUsername("1");
+		user.setPassword("1");
+		String[] res = LibraryBal.loginBal(user);		
+		assertEquals("Logged In...", res[0]);
+		assertEquals(user.getUsername(), res[1]);
+		
+		user.setPassword("wrongpassword");
+		res = LibraryBal.loginBal(user);		
+		assertEquals("Invalid Login Credentials...", res[0]);
+		assertEquals("Error", res[1]);
+	}
+	
+	@Test
+	public void usersGetterAndSetterTest() {
+	    User obj = new User();
+	    obj.setPassword("12345");
+	    obj.setUsername("12345");
+	    
+	    assertEquals("12345", obj.getPassword());
+	    assertEquals("12345", obj.getUsername());
+	    
+	}
+
+	@Test
+	public void issueBookBalTest() {
+		assertFalse(LibraryBal.issueBookBal("1",3));
+		assertTrue(LibraryBal.issueBookBal("1",9));
+		LibraryBal.returnBookBal("1", 9);
+		
+	}
+	
+	@Test
+	public void returnBookTest() {
+		Connection con = DaoConnection.getConnection();
+		String username = "1 ";
+		String cmd = "select BookId from tranbook where username = ";
+		cmd += username; 
+		PreparedStatement pst;
+		int bookid = 0;
+		
+		try {
+			pst = con.prepareStatement(cmd);
+			ResultSet rs = pst.executeQuery();
+			rs.next();
+			bookid = rs.getInt("BookId");
+		} catch (SQLException e) {
+		}
+		assertEquals("<br/>**********Returned Successfully**********", LibraryBal.returnBookBal(username, bookid));
+		LibraryBal.issueBookBal(username,bookid);
+	}
+	
+	@Test
+	public void showHistoryTest() {
+		String result = LibraryBal.showHistoryBal("1");
+		char[] resArr = result.toCharArray();
+		int count = 0;
+		int len = 0;
+		for (char c : resArr) {
+			if(c == '/') {
+				len++;
+			}
+		}
+		Connection con = DaoConnection.getConnection();
+		String cmd = "select Count(*) from transreturn where username='1'";
+		try {
+			PreparedStatement pst = con.prepareStatement(cmd);
+			ResultSet rs = pst.executeQuery();
+			rs.next();
+			count = rs.getInt("Count(*)");
+		} catch (SQLException e) {
+		}
+		assertEquals(len, count);
+	}
+	
+	@Test
+	public void showIssuedBookTest() {
+		String[][] res = new String[2];
+		
+	}
+
+}

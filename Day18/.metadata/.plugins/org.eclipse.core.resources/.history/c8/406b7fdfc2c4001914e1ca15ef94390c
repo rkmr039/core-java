@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome To Bank</title>
+</head>
+<body>
+	<p id="name"></p>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="CreateAccount"><input type="submit" value="Logout"></a><br/><br/>
+	<a href="CloseAccount">Issue Book</a>&nbsp;&nbsp;&nbsp;
+	<a href="UpdateAccount">Return Book</a>&nbsp;&nbsp;&nbsp;
+	<a href="DepositAccount">My Account</a>&nbsp;&nbsp;&nbsp;
+	<a href="WithdrawalAccount">MyHistory</a>&nbsp;&nbsp;&nbsp;
+	<a href="SearchAccount">Search Account</a>&nbsp;&nbsp;&nbsp;
+</body>
+</html>

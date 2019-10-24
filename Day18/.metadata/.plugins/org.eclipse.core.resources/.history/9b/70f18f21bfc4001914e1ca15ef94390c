@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome To Bank</title>
+</head>
+<body>
+	<form methdo="get" action="menu.jsp">
+		<a href="CreateAccount.html">Create Account</a>
+	</form>
+</body>
+</html>

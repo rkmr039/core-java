@@ -1,0 +1,15 @@
+package com.hcl.obj;
+
+public class SbExample {
+
+	public static void main(String[] args) {
+		int age;
+		String name;
+		String course;
+		String city;
+		age = 11;
+		name = " Ram";
+		course = "JAVA";
+		city = "Delhi";
+	}
+}

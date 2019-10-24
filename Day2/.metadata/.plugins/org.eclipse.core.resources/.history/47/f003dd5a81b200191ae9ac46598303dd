@@ -1,0 +1,10 @@
+package com.hcl.boxing;
+
+public class Employ {
+
+	int empno;
+	String name;
+	double basic;
+	
+	
+}

@@ -1,0 +1,43 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="com.hcl.jspcrud.DaoConnection"%>
+<%@page import="java.sql.Connection"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+	Connection con = DaoConnection.getConnection();
+	String cmd = "select max(empno)+1 empno from employ";
+	PreparedStatement pst = con.prepareStatement(cmd);
+	ResultSet rs = pst.executeQuery();
+	rs.next();
+	int empno = rs.getInt("empno");
+%>
+	<form method="get" action="EmployInsert.jsp">
+		<center>
+			Employ No:
+			<input type="text" readonly name="empno"/><br/><br/>
+			Employ Name:
+			<input type="text" name="name"/><br/><br/>
+			Department:
+			<input type="text" name="dept"/><br/><br/>
+			Designation:
+			<input type="text" name="desig"/><br/><br/>
+			Salary:
+			<input type="text" name="basic"/><br/><br/>
+			<input type="submit" value="Insert"/><br/><br/>
+		</center>
+	</form>
+	<%
+		cmd = "insert into employ values(?,?,?,?,?);";
+		pst = con.prepareStatement(cmd);
+		
+	%>
+</body>
+</html>

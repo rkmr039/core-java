@@ -1,0 +1,19 @@
+package com.hcl.boxing;
+
+public class BoxStudent {
+
+	public void show(Object obj){
+		Student e = (Student)obj;
+		System.out.println(e);
+	}
+	public static void main(String[] args) {
+		Student obj = new Student();
+		obj.sno = 10017826;
+		obj.name="RISHAB";
+		obj.city="Delhi";
+		
+		
+		
+		new BoxStudent().show(obj);
+	}
+}

@@ -1,0 +1,15 @@
+package com.hcl.inheritance;
+
+class C1{
+	public void show(){
+		System.out.println("C1 SHOW METHOD");
+	}
+}
+public class InhDemo {
+	
+	public void display(){
+		System.out.println("InhDemo Display Method");
+	}
+
+	
+}

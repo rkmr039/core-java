@@ -1,0 +1,26 @@
+package com.hcl.inventory;
+
+import java.util.List;
+
+public class ShowStock {
+	
+	public String showStock() {
+		String html = "<jsp:include page='menu.html'></jsp:include> <form method='get' acton='ShowStock.jsp'> <center> <table border='1'> "
+				+ "	<tr> 	<th>Stock Id</th>	<th>Item Name</th>	<th>Price</th>	<th>Quantity Available</th></tr> <tr>  " ;				
+		
+			
+		List<Stock> stocks = InventryBal.showStockBal();
+		for (Stock stock : stocks) {
+			html += "<td> " +stock.getStockId() + " </td>";
+			html += "<td></td>";
+			html += "<td></td>";
+			html += "<td></td>";
+		}
+		
+		
+		html +=  "	</tr></table></center></form>";
+		
+		return html;
+	}
+	
+}

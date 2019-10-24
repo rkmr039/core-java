@@ -1,0 +1,27 @@
+package com.hcl.abstractClass;
+
+abstract class  Animal{
+	
+	abstract void name();
+	abstract void type();
+}
+
+class Lion extends Animal{
+
+	@Override
+	void name() {
+		
+	}
+
+	@Override
+	void type() {
+		
+	}
+	
+}
+
+
+
+public class AbsTest {
+
+}

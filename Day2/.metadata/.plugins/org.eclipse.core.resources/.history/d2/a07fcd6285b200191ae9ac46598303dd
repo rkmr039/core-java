@@ -1,0 +1,26 @@
+package com.hcl.boxing;
+
+public class Student {
+
+	int sno;
+	String name;
+	String city;
+	
+	@Override
+	public boolean equals(Object obj) {
+		
+		Student objStudent = (Student)obj;
+		if (objStudent.city == this.city) {
+			return true;
+		} else {
+			return false;
+		}
+			
+		
+	}
+	double cgp;
+	@Override
+	public String toString() {
+		return "Student [sno=" + sno + ", name=" + name + ", city=" + city + ", cgp=" + cgp + "]";
+	}
+}

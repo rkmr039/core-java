@@ -1,0 +1,12 @@
+package com.hcl.java;
+
+public class CircleDemo {
+	
+	public void calc(double radius){
+		double area;
+		double circ;
+	}
+	public static void main(String[] args) {
+		double radius=12.5;
+	}
+}

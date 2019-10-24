@@ -1,0 +1,13 @@
+package com.hcl.jdbcdemo;
+
+public class EmployShow {
+  /**
+   * main() .
+   * @param args .
+ * @throws ClassNotFoundException 
+   */
+
+  public static void main(String[] args) throws ClassNotFoundException {
+    Class.forName("com.mysql.jdbc.Driver");	
+	}
+}

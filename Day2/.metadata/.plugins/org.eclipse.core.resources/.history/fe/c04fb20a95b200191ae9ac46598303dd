@@ -1,0 +1,16 @@
+package com.hcl.boxing;
+
+public class ConDemo {
+
+	static {
+		System.out.println("STATIC Constructor....");
+	}
+	
+	public ConDemo() {
+		System.out.println("Default Constructor...");
+	}
+
+	public static void main(String[] args) {
+		
+	}
+}

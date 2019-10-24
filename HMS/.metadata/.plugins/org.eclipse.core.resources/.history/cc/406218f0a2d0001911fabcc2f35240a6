@@ -1,0 +1,8 @@
+package com.hcl.hms;
+
+public class Bill {
+	private String bookId;
+	private String roomId;
+	private int noOfDays;
+	private int billAmount;
+}

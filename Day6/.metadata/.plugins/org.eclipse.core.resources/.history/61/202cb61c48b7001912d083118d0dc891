@@ -1,0 +1,43 @@
+package com.hcl.lambdaexpressions;
+
+// FunctionalInterface can have only one method
+@FunctionalInterface
+interface ICalc {
+	int calc(int a, int b);
+}
+
+public class LambdaDemo3 {
+	/**
+	 * main() .
+	 * 
+	 * @param args
+	 *            .
+	 */
+
+	public static void main(String[] args) {
+		// Declaration for calc() of ICalc interface
+		ICalc add = (a,b) -> {
+			System.out.println("Sum of a and b : ");
+			return a + b;
+		};
+		ICalc sub = (a,b) -> {
+			System.out.println("Difference of a and b : ");
+			return a - b;
+		};
+		ICalc mul = (a,b) -> {
+			System.out.println("Product of a and b : ");
+			return a * b;
+		};
+		
+		
+		int a = 7;
+		int b = 4;
+		ICalc[] arr = new ICalc[]{add,sub,mul};
+		for (ICalc iCalc : arr) {
+			System.out.println(iCalc.calc(a, b));
+		}
+		System.out.println(add.calc(a, b));
+		sub.calc(a, b);
+		mul.calc(a, b);
+	}
+}

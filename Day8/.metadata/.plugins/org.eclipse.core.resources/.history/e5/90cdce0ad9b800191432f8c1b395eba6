@@ -1,0 +1,33 @@
+package com.hcl.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class EmploySearch {
+  /**
+   * main() entry point. 
+   * @param args command line arguments. not required now.
+   */
+
+  public static void main(String[] args) {
+    int empno;
+    System.out.println("Enter Employ No.");
+    Scanner sc = new Scanner(System.in);
+    empno = sc.nextInt();
+
+    // load the Driver
+    try {
+      Class.forName("com.mysql.jdbc.Driver");
+      Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sqlpractice",
+            "root","root");
+      
+    } catch (ClassNotFoundException e) {
+      e.printStackTrace();
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+  }
+ 
+}

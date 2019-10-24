@@ -1,0 +1,29 @@
+package com.hcl.daterange;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+public class ShowDateRange {
+	public static void main(String[] args) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Date startDate;
+		try {
+			startDate = sdf.parse("2016-02-28");
+			Date endDate = sdf.parse("2016-03-02");
+			
+			
+			System.out.println(startDate);
+			System.out.println(endDate);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		
+	}
+}

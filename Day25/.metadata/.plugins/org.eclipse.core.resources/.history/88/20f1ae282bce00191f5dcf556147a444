@@ -1,0 +1,75 @@
+package com.hcl.emp;
+
+import java.util.Iterator;
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+public class EmployCrud {
+	
+	public  String updateEmploy(Employ e) {
+		Employ res = searchEmploy(e.getEmpno());
+		res.setName(e.getName());
+		res.setDept(e.getDept());
+		res.setDesig(e.getDesig());
+		res.setBasic(e.getBasic());
+		
+		SessionFactory sf = HibernateUtil.getConnection();
+		Session s = sf.openSession();
+		Transaction t = s.getTransaction();
+		s.update(res);
+		t.begin();
+		t.commit();
+		return "******UPDATED SUCCESFULLY*****";
+	}
+	
+	public List<Employ> showEmploy() {
+		SessionFactory sf = HibernateUtil.getConnection();
+		Session s = sf.openSession();
+		Query q = s.createQuery("from Employ");
+		List<Employ> empList = q.list();
+		return empList;
+	}
+	public  Employ searchEmploy(int empno) {
+		SessionFactory sf = HibernateUtil.getConnection();
+		Session s = sf.openSession();
+		Query q = s.createQuery("from Employ where empno = "+empno);
+		List<Employ> lstEmploy = q.list();
+		Employ e = null;
+		if(lstEmploy.size() != 0) {
+			e = lstEmploy.get(0);
+		}
+		return e;
+	}
+	public  boolean insertEmploy(Employ e) {
+		SessionFactory sf = HibernateUtil.getConnection();
+		Session s = sf.openSession();
+		boolean flag = false;
+		int empno = 0;
+		Query q =  s.createQuery("SELECT max(empno) from Employ");
+		for(Iterator it = q.iterate(); it.hasNext();) {
+			empno = (Integer)it.next();
+		}
+		empno++;
+		e.setEmpno(empno);
+		s.save(e);
+		Transaction t = s.getTransaction();
+		t.begin();
+		t.commit();
+		flag = true;
+		return flag;
+	}
+
+	public void removeEmploy(int empno) {
+		SessionFactory sf = HibernateUtil.getConnection();
+		Session s = sf.openSession();
+		Query q = s.createQuery("from Employ where empno = "+empno);
+		s.delete(q);
+		Transaction t = s.getTransaction();
+		t.begin();
+		t.commit();
+	}
+}

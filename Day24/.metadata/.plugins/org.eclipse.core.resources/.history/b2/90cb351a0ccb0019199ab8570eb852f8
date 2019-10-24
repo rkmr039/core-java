@@ -1,0 +1,10 @@
+package com.hcl.emp;
+
+import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.cfg.Configuration;
+
+public class EmploySearch {
+	int empno = 1;
+	Configuration cfg = new AnnotationConfiguration();
+	cfg.configure("hibernate.cfg.xml");
+}

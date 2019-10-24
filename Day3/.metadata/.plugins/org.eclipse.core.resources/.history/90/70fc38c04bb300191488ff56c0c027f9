@@ -1,0 +1,11 @@
+package com.hcl.varargs;
+
+public class Attendence {
+
+	public void show(String name){
+		
+	}
+	public static void main(String[] args) {
+		
+	}
+}

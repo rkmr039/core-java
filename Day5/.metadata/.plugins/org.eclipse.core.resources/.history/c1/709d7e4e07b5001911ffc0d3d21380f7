@@ -1,0 +1,12 @@
+package com.hcl.scanner;
+
+import java.util.Scanner;
+
+public class ScannerDemo {
+
+	public static void main(String[] args) {
+		System.out.println("Enter uy namne : ");
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Name : " + name);
+	}
+}

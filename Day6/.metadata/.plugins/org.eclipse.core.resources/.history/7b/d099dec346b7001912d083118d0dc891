@@ -1,0 +1,8 @@
+package com.hcl.lambdaexpressions;
+
+public class Snippet {
+	IHello h1 = () -> {
+	      System.out.println("Say Hello from Rishab");
+	    };
+}
+

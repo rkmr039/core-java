@@ -1,0 +1,32 @@
+package com.hcl.files;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+
+public class ReadStudent {
+  /**
+   * main().
+   * @param args .
+   */
+
+  public static void main(String[] args) { 
+    try { 
+      FileInputStream fin = new FileInputStream("C:/files/student.txt");
+      ObjectInputStream objin = new ObjectInputStream(fin);
+      Student obj = (Student) objin.readObject();
+      System.out.println(obj);
+      
+      
+      objin.close();
+      fin.close();
+    } catch (FileNotFoundException e) { 
+      e.printStackTrace();
+    } catch (IOException e) { 
+      e.printStackTrace();
+    } catch (ClassNotFoundException e) { 
+      e.printStackTrace();
+    }
+  }
+}

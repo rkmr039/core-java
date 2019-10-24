@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title> Stock Manager | Dashboard </title>
+</head>
+<body>
+	<a href="Add.jsp" >Add Stock</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="Search.jsp">Search Stock</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="Show.jsp">Show Stock</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="Update.jsp">Update Stock</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="Place.jsp">Place Order</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<br/><p>=============================================</p>
+</body>
+</html>

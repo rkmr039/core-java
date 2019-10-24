@@ -1,0 +1,39 @@
+package com.hcl.java;
+
+public class SbExample {
+
+	public void show(int age, String name, String course, String city){
+		StringBuilder sbError = new StringBuilder();
+		boolean isValid = true;
+		
+		/* Validation for age */
+		if(age<=20){
+			sbError.append("Age must be greater then 20" + "\r\n");
+			isValid = false;
+		}
+		/* Validation for Name */
+		if((name.indexOf(' ') == -1)){
+			sbError.append("Name contains both Firstname and lastname" + "\r\n");
+			isValid = false;
+		}
+		/* Validation for age */
+		/* Validation for age */
+		
+		System.out.println("Age    "+age);
+		System.out.println("Name   "+name);
+		System.out.println("Course "+course);
+		System.out.println("City   "+city);
+	}
+	public static void main(String[] args) {
+		int age;
+		String name;
+		String course;
+		String city;
+		age=11;
+		name="Ram";
+		course="Java";
+		city="Delhi";
+		new SbExample().show(age, name, course, city);
+		
+	}
+}

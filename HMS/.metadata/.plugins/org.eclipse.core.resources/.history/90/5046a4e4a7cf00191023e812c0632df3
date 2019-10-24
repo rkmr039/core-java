@@ -1,0 +1,12 @@
+package com.hcl.hms;
+
+import java.util.Date;
+
+public class Booking {
+	private String bookId;
+	private String roomId;
+	private String custName;
+	private String city;
+	private Date bookDate;
+	private Date chkdate;
+}

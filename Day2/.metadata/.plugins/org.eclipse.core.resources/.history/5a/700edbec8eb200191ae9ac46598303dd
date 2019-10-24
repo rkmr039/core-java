@@ -1,0 +1,21 @@
+package com.hcl.boxing;
+
+public class EmploySearch {
+
+	public Employ showEmploy(int empno){
+		Employ emp;
+		
+		if(empno == 1){
+			emp.empno=1;
+			emp.name="Anand";
+			emp.basic=34567;
+		}
+		
+		
+		return emp;
+		
+	}
+	public static void main(String[] args) {
+		
+	}
+}

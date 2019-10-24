@@ -1,0 +1,14 @@
+package com.hcl.inheritance;
+
+public class First {
+
+	public void show(){
+		System.out.println("First Class Show() method");
+	}
+}
+class Second extends First {
+
+	public void show(){
+		System.out.println("Second Class Show() method");
+	}
+}

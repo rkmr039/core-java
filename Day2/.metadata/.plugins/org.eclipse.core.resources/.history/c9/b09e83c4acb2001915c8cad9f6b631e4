@@ -1,0 +1,9 @@
+package com.hcl.boxing;
+														
+
+public class StDemo {
+	static void diplay(){
+		System.out.println("STATIC METHOD");
+	}
+
+}

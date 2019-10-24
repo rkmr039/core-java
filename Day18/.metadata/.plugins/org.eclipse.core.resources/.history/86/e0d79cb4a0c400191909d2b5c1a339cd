@@ -1,0 +1,17 @@
+package com.hcl.beansjdbc;
+
+public class EmploySearch {
+  
+  private int empno;
+
+public int getEmpno() {
+	return empno;
+}
+
+public void setEmpno(int empno) {
+	this.empno = empno;
+}
+  public ResultSet searchEmploy(int empno) {
+	  
+  }
+}

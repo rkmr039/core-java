@@ -1,0 +1,22 @@
+package com.hcl.access_specifier;
+
+class Demo4{
+	protected int d;
+	public Demo4(){
+		d = 5;
+	}
+	protected void show(){
+		System.out.println(this.d);
+	}
+}
+public class ProtectedMembers {
+
+	
+	protected void show(){
+		System.out.println("Protected Member");
+	}
+	public static void main(String[] args) {
+		Demo4 obj = new Demo4();
+		obj.show();
+	}
+}

@@ -1,0 +1,25 @@
+package com.hcl.generics;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class GenListInt {
+  /*
+   * main.
+   * @param args .
+   */
+
+  public static void main(String[] args) {
+    List<Integer> isData = new ArrayList<Integer>();
+    isData.add(new Integer(24));
+    isData.add(new Integer(65));
+    isData.add(new Integer(45));
+    
+    int sum = 0;
+    for (Integer num : isData) {
+		sum += num;
+	}
+    System.out.println(num);
+	
+}
+}

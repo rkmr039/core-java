@@ -1,0 +1,24 @@
+package com.hcl.interfacePckg;
+
+interface ITraining{
+	void name();
+	void email();
+}
+
+class Rishab implements ITraining{
+
+	@Override
+	public void name() {
+		System.out.println("Rishab");
+	}
+
+	@Override
+	public void email() {
+		System.out.println("rkmr039@gmail.com");
+	}
+	
+}
+
+public class InterfaceDemo {
+
+}

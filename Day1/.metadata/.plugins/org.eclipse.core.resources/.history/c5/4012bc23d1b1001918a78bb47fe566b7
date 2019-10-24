@@ -1,0 +1,15 @@
+package com.hcl.java;
+
+public class Switch2 {
+
+	public void check(String opt){
+		switch(opt){
+		case "INSERT":
+			System.out.println("Insert Operation...");
+			break;
+		}
+	}
+	public static void main(String[] args) {
+		String op="Insert";
+	}
+}

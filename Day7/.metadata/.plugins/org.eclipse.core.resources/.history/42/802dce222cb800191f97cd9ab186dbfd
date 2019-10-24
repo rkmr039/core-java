@@ -1,0 +1,7 @@
+package com.hcl.dbdemo;
+
+public class GetDbConnection {
+
+	public Database getConnection
+	
+}

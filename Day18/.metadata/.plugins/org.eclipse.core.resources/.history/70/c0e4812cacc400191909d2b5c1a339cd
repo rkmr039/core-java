@@ -1,0 +1,40 @@
+package com.hcl.bankjsp;
+
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+public class SearchAccount {
+
+  private int accno;
+  
+	public int getAccno() {
+	return accno;
+}
+
+public void setAccno(int accno) {
+	this.accno = accno;
+}
+  public String searchAccount() {
+		Accounts objAccounts = AccountBal.searchAccountBal(accno);
+		String res = "";
+		if (objAccounts != null) {
+			//out.println(objAccount.toString());
+			((ServletOutputStream) out).println("<br/>First Name    :" + objAccounts.getFirstName() + "<br/>");
+		    ((ServletOutputStream) out).println("Last name     :" + objAccounts.getLastName()+ "<br/>");
+		    ((ServletOutputStream) out).println("City          :" + objAccounts.getCity()+ "<br/>");
+		    ((ServletOutputStream) out).println("State         :" + objAccounts.getState()+ "<br/>");
+		    ((ServletOutputStream) out).println("Amount        :" + objAccounts.getAmount()+ "<br/>");
+		    ((ServletOutputStream) out).println("CheqFacil     :" + objAccounts.getCheqFacil()+ "<br/>");
+		    ((ServletOutputStream) out).println("Account Type  :" + objAccounts.getAccountType()+ "<br/>");
+		}	
+	}
+}

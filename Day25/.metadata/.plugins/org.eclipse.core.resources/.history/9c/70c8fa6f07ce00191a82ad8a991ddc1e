@@ -1,0 +1,44 @@
+package com.hcl.emp;
+
+import java.util.Iterator;
+import java.util.Scanner;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.cfg.Configuration;
+
+public class InsertEmploy {
+	public static void main(String[] args) {
+		Employ e = new Employ();
+		Scanner sc = new Scanner(System.in);		
+		Configuration cfg = new AnnotationConfiguration();
+		cfg.configure("hibernate.cfg.xml");
+		SessionFactory sf = cfg.buildSessionFactory();
+		Session s = sf.openSession();
+
+		int empno = 0;
+		Query q =  s.createQuery("SELECT max(empno) from Employ");
+		for(Iterator it = q.iterate(); it.hasNext();) {
+			empno = (Integer)it.next();
+		}
+		
+		
+		e.setEmpno(10000);
+		e.setName("xxxxx");
+		e.setDept("xxxxxx");
+		e.setDesig("xxxxxxxx");
+		e.setBasic(2327392);
+		
+		s.save(e);
+		Transaction t = s.getTransaction();
+		t.begin();
+		t.commit();
+		
+		System.out.println("Inserted Successfully"); 
+		
+	}
+	
+}

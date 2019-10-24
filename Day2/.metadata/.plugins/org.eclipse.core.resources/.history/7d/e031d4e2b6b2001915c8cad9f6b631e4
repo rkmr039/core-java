@@ -1,0 +1,18 @@
+package com.hcl.access_specifier;
+
+class Demo3{
+	private int b;
+	public void setB(int b){
+		this.b = b;
+		System.out.println(this.b);
+	}
+}
+public class PrivateClass {
+
+	private int a;
+	public static void main(String[] args) {
+		PrivateClass p1 = new PrivateClass();
+		p1.a = 5;
+		System.out.println(p1.a);
+	}
+}

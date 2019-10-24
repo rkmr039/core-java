@@ -1,0 +1,27 @@
+package com.hcl.jdbcdemo;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class EmployShow {
+  /**
+   * main() .
+   * @param args .
+   *
+   */
+
+  public static void main(String[] args) {
+    Connection con = GetDbConnection.getConnection();
+    
+    try {
+		PreparedStatement ps = con.prepareStatement("DESC Employ");
+		for (String string : ps) {
+			System.out.println(string);
+		}
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+  }
+}

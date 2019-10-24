@@ -1,0 +1,15 @@
+package com.hcl.jdbc;
+
+import java.sql.Connection;
+import java.util.Scanner;
+
+public class EmploySearch {
+  public static void main(String[] args) {
+	int empno;
+	Scanner sc = new Scanner(System.in);
+	empno = sc.nextInt();
+	Connection con = new DaoConnection().getConnection();
+	String cmd = "Select * from Employ where empno = ?;"
+}
+
+}

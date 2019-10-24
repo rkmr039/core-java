@@ -1,0 +1,31 @@
+package com.hcl.students;
+
+import java.io.Serializable;
+import java.util.Comparator;
+
+public class Student {
+  private int sno;
+  private String name;
+  private String city;
+  private double cgp;
+  /**
+   * Constructor.
+   * @param sno unique.
+   * @param name .
+   * @param city .
+   * @param cgp .
+   */
+  public Student(int sno, String name, String city, double cgp) {
+		super();
+		this.sno = sno;
+		this.name = name;
+		this.city = city;
+		this.cgp = cgp;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [sno=" + sno + ", name=" + name + ", city=" + city + ", cgp=" + cgp + "]";
+	}
+
+}

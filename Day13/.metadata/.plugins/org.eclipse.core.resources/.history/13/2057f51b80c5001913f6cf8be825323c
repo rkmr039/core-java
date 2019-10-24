@@ -1,0 +1,12 @@
+package com.hcl.library;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class LibraryTestCases {
+
+	@Test
+	
+
+}

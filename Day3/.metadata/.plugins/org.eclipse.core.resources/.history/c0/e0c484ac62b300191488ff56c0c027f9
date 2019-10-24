@@ -1,0 +1,27 @@
+package com.hcl.interfacePckg;
+
+interface IFirst{
+	default void name(){
+		System.out.println("IFirst");
+	}
+}
+interface ISecond{
+	void name();
+}
+interface IThird{
+	void name();
+}
+
+class Demo implements IFirst, ISecond, IThird{
+
+	@Override
+	public void name() {
+		
+		
+	}
+	
+
+}
+public class MultiInh2 {
+	
+}

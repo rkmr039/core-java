@@ -1,0 +1,15 @@
+package com.hcl.lambdaexpressions;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class LambdaDemo2 {
+  /**
+   * main() .
+   * @param args .
+   */
+
+  public static void main(String[] args) {
+    
+  }
+}

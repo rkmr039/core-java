@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	Welcome User : <p id="name"></p>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="LogoutServlet"><input type="submit" value="Logout" onclick="LogoutServlet"></a><br/><br/>
+</body>
+</html>

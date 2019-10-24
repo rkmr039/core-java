@@ -1,0 +1,17 @@
+package com.hcl.boxing;
+
+public class OverLoadDemo {
+
+	public void show(int x){
+		System.out.println("Show w.r.t. Int ..."+x);
+	}
+	public void show(String x){
+		System.out.println("Show w.r.t. String ..."+x);
+	}
+	public void show(boolean x){
+		System.out.println("Show w.r.t. boolean..."+x);
+	}
+	public void show(double x){
+		System.out.println("Show w.r.t. Double ..."+x);
+	}
+}

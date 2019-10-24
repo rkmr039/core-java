@@ -1,0 +1,31 @@
+package com.hcl.lambdaexpressions;
+
+/**
+ * Product Class.
+ * @author RISHAB KUMAR
+ */
+public class Product {
+  int id;
+  String name;
+  double price;
+  /**
+   * toString(). 
+   */
+  
+  @Override
+  public String toString() {
+    return "Product [id=" + id + ", name=" + name + ", price=" + price + "]";
+  }
+  /**
+   * Constructor.
+   * @param id .
+   * @param name .
+   * @param price .
+   */
+  
+  public Product(int id, String name, double price) {
+    this.id = id;
+    this.name = name;
+    this.price = price;
+  }
+}

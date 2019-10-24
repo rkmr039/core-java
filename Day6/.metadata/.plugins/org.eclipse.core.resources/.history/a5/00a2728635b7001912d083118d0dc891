@@ -1,0 +1,22 @@
+package com.hcl.generics;
+
+
+public class SwapDemo {
+  /**
+   * main.
+   * @param args .
+   */
+
+  public static void main(String[] args) {
+    Data obj = new Data();
+    int x = 5;
+    int y = 7;
+    obj.swap(x,y);
+    double a = 796.23;
+    double d = 726.23;
+    obj.swap(a, d);
+    String s1 = "rishab";
+    String s2 = "kumar";
+    obj.swap(s1, s2);
+  }
+}

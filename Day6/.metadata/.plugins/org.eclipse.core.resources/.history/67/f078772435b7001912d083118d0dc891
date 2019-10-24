@@ -1,0 +1,34 @@
+package com.hcl.generics;
+
+class Data<T> {
+  /**
+   * swap two numbers.
+   * @param x .
+   * @param y .
+   */
+
+  public void swap(T x, T y) {
+    T t;
+    System.out.println(" X : " + y + " y : " + x);
+    t = x;
+    x = y;
+    y = t;
+    System.out.println(" X : " + x + " y : " + y);
+  }
+}
+public class SwapDemo {
+  /**
+   * main.
+   * @param args .
+   */
+
+  public static void main(String[] args) {
+    Data obj = new Data();
+    int x = 5;
+    int y = 7;
+    obj.swap(x,y);
+    double a = 796.23;
+    double d = 726.23;
+    obj.swap(a, d);
+  }
+}

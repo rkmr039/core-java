@@ -1,0 +1,14 @@
+package com.hcl.dbdemo;
+import java.sql.*;
+
+
+public class GetDbConnection {
+
+	public static void main(String[] args) {
+		
+	}
+	public Database getConnection() {
+		
+	}
+	
+}

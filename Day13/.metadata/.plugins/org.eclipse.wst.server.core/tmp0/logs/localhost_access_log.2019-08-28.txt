@@ -1,0 +1,5 @@
+127.0.0.1 - - [28/Aug/2019:14:02:29 +0530] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [28/Aug/2019:14:02:30 +0530] "GET /LibraryManagementProject/ HTTP/1.1" 200 486
+0:0:0:0:0:0:0:1 - - [28/Aug/2019:14:02:35 +0530] "GET /LibraryManagementProject/LoginServlet?userName=1&passWord=1 HTTP/1.1" 200 674
+0:0:0:0:0:0:0:1 - - [28/Aug/2019:14:02:37 +0530] "GET /LibraryManagementProject/IssueBooks HTTP/1.1" 200 1483
+0:0:0:0:0:0:0:1 - - [28/Aug/2019:14:02:40 +0530] "GET /LibraryManagementProject/IssueBooksServlet?searchType=TotalBooks&searchValue=+ HTTP/1.1" 200 3734

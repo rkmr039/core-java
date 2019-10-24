@@ -1,0 +1,23 @@
+package com.hcl.studentsproject;
+
+public class StudentBAL {
+  StringBuilder sb = new StringBuilder();
+  public boolean addStudent(Student obj) {
+	  boolean isAdded = true;
+	  if(obj.getSno() <= 0) {
+		  sb.append("Student SNo can not be negative or zero....");
+	  }
+	  if(obj.getName().length() <= 3) {
+		  sb.append("Name more then 3 characters...");
+	  }
+	  if(obj.getCity().length() <= 3) {
+		  sb.append("City more then 3 characters...");
+	  }
+	  if(obj.getCgp() < 0) {
+		  sb.append("CGP Non-Negative....\r\n");
+	  }
+	  
+	  
+	  return isAdded; 
+  }
+}

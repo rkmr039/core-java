@@ -1,0 +1,6 @@
+package com.hcl.bankjsp;
+
+public class Login {
+  private String userName;
+  private String passWord;
+}

@@ -1,0 +1,13 @@
+package com.hcl.lambdaexpressions;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import com.hcl.generics.Employ;
+
+public class LambdaEmploy {
+    List<Employ> list = new ArrayList<Employ>();
+    
+
+}

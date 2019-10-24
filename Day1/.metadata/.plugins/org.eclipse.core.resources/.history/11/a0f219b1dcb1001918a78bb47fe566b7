@@ -1,0 +1,9 @@
+package com.hcl.java;
+
+public class StrFunctionDemo {
+
+	public static void main(String[] args) {
+		String str = "Welcome to Java Programming...";
+		System.out.println("Length of String "+str.length());
+	}
+}

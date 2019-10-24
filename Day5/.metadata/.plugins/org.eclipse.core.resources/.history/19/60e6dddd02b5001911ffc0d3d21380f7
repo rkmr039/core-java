@@ -1,0 +1,37 @@
+package com.hcl.collections;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class LnkdSetDemo {
+  /**
+   * main() .
+   * @param args .
+   */
+
+  public static void main(String[] args) {
+	  LinkedHashSet s = new LinkedHashSet();
+    s.add("Rishab");
+    s.add("Yash");
+    s.add("Tushar");
+    s.add("Amit");
+    s.add("Anand");
+    s.add("Rishab");
+    s.add("Yash");
+    s.add("Tushar");
+    s.add("Amit");
+    s.add("Anand");
+    s.add("Rishab");
+    s.add("Yash");
+    s.add("Tushar");
+    s.add("Amit");
+    s.add("Anand");
+    s.add("Rishab");
+    s.add("Yash");
+    s.add("Tushar");
+    s.add("Amit");
+    s.add("Anand");
+    System.out.println("HashSet Data");
+    s.forEach(System.out::println);
+  }
+}

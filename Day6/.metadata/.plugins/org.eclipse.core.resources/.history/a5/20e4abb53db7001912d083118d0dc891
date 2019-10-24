@@ -1,0 +1,23 @@
+package com.hcl.generics;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class SortStudents<T> {
+	  /**
+	   * main().
+	   * @param args . 
+	   */
+
+	  public static void main(String[] args) {
+		T<Student> lstStudent = new ArrayList<Student>();
+		lstStudent.add(new Student(1, "Rishab", "Delhi", 6.3));
+		lstStudent.add(new Student(2, "Amit", "Noida", 7.3));
+		lstStudent.add(new Student(3, "Amar", "Kanpur", 8.3));
+		lstStudent.add(new Student(4, "Anand", "Patna", 9.3));
+		lstStudent.add(new Student(5, "Tushar", "Mumbai", 5.3));
+		System.out.println("Student List : ");
+		System.out.println("Sorted By Name...");
+		Arrays.sort(lstStudent, Student.NameComparator);
+	  }
+	}

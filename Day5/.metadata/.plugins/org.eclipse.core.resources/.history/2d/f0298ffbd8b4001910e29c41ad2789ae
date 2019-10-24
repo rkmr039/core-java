@@ -1,0 +1,23 @@
+package com.hcl.assertions;
+
+public class AssertDemo {
+/**
+ * incr().
+ */
+	public void incr(){
+	  int basic = 30000;
+	  for (int i = 0;i < 8;i++) { 
+		  basic = basic + 4000;
+		  assert basic < 48000;
+		  System.out.println("Salery "+ basic);
+	  }
+  }
+  /**
+   * main.
+   * @param args .
+   */
+
+  public static void main(String[] args) { 
+    new AssertDemo().incr();   
+}
+}

@@ -1,0 +1,8 @@
+package com.hcl.java;
+
+public class Switch2 {
+
+	public static void main(String[] args) {
+		String op="Insert";
+	}
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.hcl.java.Test"/>
+<fullyQualifiedTypeName name="com.hcl.java.CalcDemo"/>
+<fullyQualifiedTypeName name="com.hcl.java.CircleDemo"/>
+<fullyQualifiedTypeName name="com.hcl.java.CtoF"/>
+<fullyQualifiedTypeName name="com.hcl.java.PosNeg"/>
+<fullyQualifiedTypeName name="com.hcl.java.GreatNum"/>
+<fullyQualifiedTypeName name="com.hcl.java.LoopDemo"/>
+<fullyQualifiedTypeName name="com.hcl.java.EvenShow"/>
+<fullyQualifiedTypeName name="com.hcl.java.FactNew"/>
+<fullyQualifiedTypeName name="com.hcl.java.Factors"/>
+<fullyQualifiedTypeName name="com.hcl.java.SwitchDemo"/>
+<fullyQualifiedTypeName name="com.hcl.java.Switch2"/>
+<fullyQualifiedTypeName name="com.hcl.obj.Demo"/>
+<fullyQualifiedTypeName name="java.nio.channels.ShutdownChannelGroupException"/>
+<fullyQualifiedTypeName name="com.hcl.obj.SbExample"/>
+<fullyQualifiedTypeName name="java.nio.charset.MalformedInputException"/>
+<fullyQualifiedTypeName name="com.hcl.obj.Agent"/>
+<fullyQualifiedTypeName name="com.hcl.obj.Employ"/>
+<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+</qualifiedTypeNameHistroy>

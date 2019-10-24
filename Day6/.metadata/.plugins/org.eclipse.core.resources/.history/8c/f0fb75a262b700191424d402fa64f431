@@ -1,0 +1,15 @@
+package com.hcl.students;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class StudentDAO {
+  static List<Student> lstStudent = null;
+  static {
+    lstStudent = new ArrayList<Student>(0);
+  }
+  public String addStudent(Student student) {
+    lstStudent.add(student);
+    return "Student Created Successfully....";
+  }
+}

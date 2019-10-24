@@ -1,0 +1,12 @@
+package com.hcl.interfacePckg;
+
+interface IOne{
+	void name();
+}
+interface ITwo{
+	void email();
+}
+
+public class MultiInh {
+
+}

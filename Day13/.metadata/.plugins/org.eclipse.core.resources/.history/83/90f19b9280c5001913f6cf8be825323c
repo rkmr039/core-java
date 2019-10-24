@@ -1,0 +1,26 @@
+package com.hcl.library;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class LibraryTestCases {
+
+	@Test
+	public void bookGetterSetterTest (){
+		Book obj = new Book();
+		obj.setId(90);
+		obj.setName("Test");
+		obj.setAuthor("DenissRitchi");
+		obj.setDept("Testing");
+		obj.setNos(20);
+		
+		assertEquals(90, obj.getId());
+		assertEquals("Test", obj.getName());
+		assertEquals("DenissRitchi", obj.getAuthor());
+		assertEquals("Testing", obj.getDept());
+		assertEquals(20, obj.getNos());
+		
+	}
+
+}

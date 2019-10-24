@@ -1,0 +1,8 @@
+package com.hcl.lambdaexpressions;
+
+public class LambdaFilterDemo {
+
+public static void main(String[] args) {
+	
+}
+}

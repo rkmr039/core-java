@@ -1,0 +1,16 @@
+package com.hcl.interfacePckg;
+
+interface IFirst{
+	void name();
+}
+interface ISecond{
+	void name();
+}
+interface IThird{
+	void name();
+}
+
+public class Demo implements IFirst, ISecond, IThird{
+	
+
+}

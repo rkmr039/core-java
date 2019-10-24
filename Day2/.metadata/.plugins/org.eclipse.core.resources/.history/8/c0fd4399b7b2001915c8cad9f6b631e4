@@ -1,0 +1,9 @@
+package com.hcl.access_specifier;
+
+public class Demo5 extends ProtectedMembers {
+	public static void main(String[] args) {
+		Demo4 obj = new Demo4();
+		obj.show();
+	}
+
+}

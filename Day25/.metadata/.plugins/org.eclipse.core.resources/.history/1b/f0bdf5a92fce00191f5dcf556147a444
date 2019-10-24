@@ -1,0 +1,9 @@
+package com.hcl.dept;
+
+import java.util.List;
+
+public class DeptCrud {
+	public List<Department> showDept() {
+		
+	}
+}

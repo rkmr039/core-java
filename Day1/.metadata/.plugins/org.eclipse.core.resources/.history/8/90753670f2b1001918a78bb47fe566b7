@@ -1,0 +1,56 @@
+package com.hcl.obj;
+
+public class Agent {
+
+	public StringBuilder show(String agentId,
+								String fullName,
+								int martialStatus,
+								String zipcode){
+		StringBuilder sbResult = new StringBuilder();
+		
+		boolean isValid = true;
+		
+		if(!((agentId.charAt(0)) == 'A'))
+		{
+			sbResult.append("Agent ID Starts with 'A'"); 
+			isValid = false;
+		}
+		if(fullName.indexOf(" ") == -1){
+			sbResult.append("Fullname should contain First and Last name"); 
+			isValid = false;
+		}
+		if(fullName.length() > 20){
+			sbResult.append("Full name length should be less then 20 characters"); 
+			isValid = false;
+		}
+		if(!(zipcode.length() == 6) ){
+			sbResult.append("Zipcode length should be 6 characters "); 
+			isValid = false;
+		}
+		if(isValid){
+			sbResult.append("Agent ID " +agentId);
+			sbResult.append("Name "+ fullName);
+			if(martialStatus == 0){
+				sbResult.append("Maritial Status Married");
+			}else{
+				sbResult.append("Not Married");
+			}
+			sbResult.append("Zipcode "+zipcode);
+		}
+		
+		return sbResult;
+		
+		
+	}
+	public static void main(String[] args) {
+		
+		int married = 0;
+		String agentId = "A01";
+		String zipcode = "293847";
+		String fullName = "RISHAB KUMAR";
+		
+		
+		System.out.println(new Agent().show(agentId, fullName, married, zipcode));
+		
+	}
+}

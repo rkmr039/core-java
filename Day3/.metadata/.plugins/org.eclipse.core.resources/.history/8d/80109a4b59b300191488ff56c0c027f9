@@ -1,0 +1,25 @@
+package com.hcl.abstractClass;
+
+abstract class Training{
+	abstract void name();
+	abstract void email();
+}
+
+class Rishab extends Training{
+
+	@Override
+	void name() {
+		
+	}
+
+	@Override
+	void email() {
+		
+	}
+	
+}
+
+public class AbsDemo{
+
+
+}

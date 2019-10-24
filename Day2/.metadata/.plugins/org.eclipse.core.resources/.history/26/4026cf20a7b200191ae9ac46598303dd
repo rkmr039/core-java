@@ -1,0 +1,17 @@
+package com.hcl.boxing;
+
+public class StringCase {
+
+	public void show(Object obj){
+		if(obj == "ABC"){ // String dosn't need  Unboxing
+			System.out.println("CORRECT");
+		}else{
+			System.out.println("WRONG");
+		}
+	}
+	public static void main(String[] args) {
+		String str = "ABC";
+		StringCase obj = new StringCase();
+		obj.show(str);
+	}
+}

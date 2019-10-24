@@ -1,0 +1,61 @@
+package com.hcl.bankjsp;
+
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class SearchAccountServlet
+ */
+public class SearchAccountServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public SearchAccountServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher rd=request.getRequestDispatcher("MenuServlet");
+		rd.include(request, response);	
+		
+		
+		int accno = Integer.parseInt(request.getParameter("accno"));
+			Accounts objAccounts = AccountBal.searchAccountBal(accno);
+			OutputStream out = response.getOutputStream(); 
+			
+			if (objAccounts != null) {
+				//out.println(objAccount.toString());
+				((ServletOutputStream) out).println("<br/>First Name    :" + objAccounts.getFirstName() + "<br/>");
+			    ((ServletOutputStream) out).println("Last name     :" + objAccounts.getLastName()+ "<br/>");
+			    ((ServletOutputStream) out).println("City          :" + objAccounts.getCity()+ "<br/>");
+			    ((ServletOutputStream) out).println("State         :" + objAccounts.getState()+ "<br/>");
+			    ((ServletOutputStream) out).println("Amount        :" + objAccounts.getAmount()+ "<br/>");
+			    ((ServletOutputStream) out).println("CheqFacil     :" + objAccounts.getCheqFacil()+ "<br/>");
+			    ((ServletOutputStream) out).println("Account Type  :" + objAccounts.getAccountType()+ "<br/>");
+			}
+			
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

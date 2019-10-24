@@ -1,0 +1,23 @@
+package com.hcl.java;
+
+public class SbExample {
+
+	public void show(int age, String name, String course, String city){
+		System.out.println("Age  "+age);
+		System.out.println("Name "+name);
+		System.out.println("Course "+course);
+		System.out.println("City  "+city);
+	}
+	public static void main(String[] args) {
+		int age;
+		String name;
+		String course;
+		String city;
+		age=11;
+		name="Ram";
+		course="Java";
+		city="Delhi";
+		new SbExample().show(age, name, course, city);
+		
+	}
+}

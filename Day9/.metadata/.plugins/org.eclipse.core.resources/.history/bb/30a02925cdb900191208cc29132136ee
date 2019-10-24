@@ -1,0 +1,25 @@
+package com.hcl.inventry;
+
+import java.util.Scanner;
+
+public class PlaceOrderMain {
+  
+  public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	int orderId = InventryBal.generateOrderId();
+	System.out.println("Enter Stock Id");
+	String stockid = sc.nextLine();
+	System.out.println("Enter Quantity Ordered ");
+	int qty = Integer.parseInt(sc.nextLine());
+	System.out.println("Enter Bill Amount");
+	double amount = sc.nextDouble();
+	Order order = new Order();
+	order.setOrderid(orderId);
+	order.setStockid(stockid);
+	order.setQtyOrd(qty);
+	order.setBillAmt(amount);
+	
+	System.out.println(InventryBal.placeOrderBal(order));
+	
+  }
+}

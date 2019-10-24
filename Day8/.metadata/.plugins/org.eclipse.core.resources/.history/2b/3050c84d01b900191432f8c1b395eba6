@@ -1,0 +1,40 @@
+package com.hcl.jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class DeleteEmploy {
+  /**
+   * main.
+   * @param args .
+   */
+
+  public static void main(String[] args) {
+    int empno;
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter Employ No ");
+    empno = sc.nextInt();
+    Connection con = new DaoConnection().getConnection();
+    String cmd = "delete from Employ where empno = ?";
+    try {
+      PreparedStatement ps = con.prepareStatement(cmd);
+      ps.setInt(1,empno);
+      int deleteted = ps.executeUpdate();
+      if (deleteted == 1) {
+        System.out.println("Empno             : " + rs.getInt("empno"));
+        System.out.println("Employ Name       : " + rs.getString("name"));
+        System.out.println("Employ Department : " + rs.getString("dept"));
+        System.out.println("Designation       : " + rs.getString("desig"));
+        System.out.println("Salary            : " + rs.getInt("basic"));
+        System.out.println("------------------------------------------");
+      } else {
+        System.out.println("======= Record Not Found======");
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+  }
+}

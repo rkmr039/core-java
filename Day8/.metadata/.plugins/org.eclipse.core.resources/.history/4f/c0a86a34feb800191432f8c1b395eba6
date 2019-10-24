@@ -1,0 +1,11 @@
+package com.hcl.jdbc;
+
+import java.util.Scanner;
+
+public class EmploySearch {
+  public static void main(String[] args) {
+	int empno;
+	Scanner sc = new Scanner(System.in);
+}
+
+}

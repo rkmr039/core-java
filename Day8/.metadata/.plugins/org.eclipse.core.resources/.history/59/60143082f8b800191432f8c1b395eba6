@@ -1,0 +1,14 @@
+package com.hcl.jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+public class EmployShow {
+
+  public static void main(String[] args) {
+	Connection con = new DaoConnection().getConnection();
+	String cmd = "Select * from Employ";
+	
+	PreparedStatement ps = con.prepareStatement(cmd);
+}
+}

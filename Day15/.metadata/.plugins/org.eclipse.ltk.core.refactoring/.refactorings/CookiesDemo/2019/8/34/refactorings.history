@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.hcl.cookies.AddServlet&apos; to &apos;AddCookieServlet&apos;&#x0D;&#x0A;- Original project: &apos;CookiesDemo&apos;&#x0D;&#x0A;- Original element: &apos;com.hcl.cookies.AddServlet&apos;&#x0D;&#x0A;- Renamed element: &apos;com.hcl.cookies.AddCookieServlet&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;AddServlet&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.hcl.cookies{AddServlet.java[AddServlet" matchStrategy="1" name="AddCookieServlet" qualified="false" references="true" similarDeclarations="false" stamp="1566275432817" textual="false" version="1.0"/>
+</session>

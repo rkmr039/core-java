@@ -1,0 +1,8 @@
+package com.hcl.collections;
+
+public class ResourceBundle {
+
+	public static void main(String[] args) {
+		ResourceBundle rb = ResourceBundle.getBundle("hcltraining");
+	}
+}

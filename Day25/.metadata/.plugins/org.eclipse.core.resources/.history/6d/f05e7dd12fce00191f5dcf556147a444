@@ -1,0 +1,18 @@
+package com.hcl.dept;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+public class DeptCrud {
+	public List<Department> showDept() {
+		SessionFactory sf = HibernateUtil.getConnection();
+		Session s = sf.openSession();
+		
+		
+		
+		
+		List<Department> deptList 
+	}
+}

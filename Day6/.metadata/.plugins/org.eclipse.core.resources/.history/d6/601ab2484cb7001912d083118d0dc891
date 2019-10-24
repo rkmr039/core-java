@@ -1,0 +1,37 @@
+package com.hcl.lambdaexpressions;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class LambdaProduct {
+  /**
+   * main() .
+   * @param args .
+   */
+
+  public static void main(String[] args) {
+    List<Product> list = new ArrayList<Product>();
+    
+    // Adding Products
+    list.add(new Product(1, "HCL LAPTOP", 45000));
+    list.add(new Product(2, "DELL LAPTOP", 10004));
+    list.add(new Product(3, "SOCY MUSIC PLAYER", 5000));
+    list.add(new Product(4, "SAMSUNG MOBILE", 50000));
+    
+    System.out.println("Sorting by Name....");
+    Collections.sort(list,(p1,p2) -> {
+      return p1.name.compareTo(p2.name);
+    });
+    for (Product product : list) {
+		System.out.println(product);
+	}
+    System.out.println("Sorting by Price....");
+    Collections.sort(list,(p1,p2) ->{
+    	return (int)(p2.price - p1.price);
+    });
+    for (Product product : list) {
+		System.out.println(product);
+	}
+}
+}

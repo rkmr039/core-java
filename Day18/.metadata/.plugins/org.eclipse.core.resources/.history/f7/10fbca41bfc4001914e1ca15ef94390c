@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome To Bank</title>
+</head>
+<body>
+	<form methdo="get" action="menu.jsp">
+		<a href="CreateAccount.html">Create Account</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="CloseAccount.html">Close Account</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="SearchAccount.html">Search Account</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="UpdateAccount.html">Update Account</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="DepositeAccount.html">Deposite Account</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="WithdrawlAccount.html">Withdrawl Account</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	</form>
+</body>
+</html>

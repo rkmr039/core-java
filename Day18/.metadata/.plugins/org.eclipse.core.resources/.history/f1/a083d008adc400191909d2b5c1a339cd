@@ -1,0 +1,22 @@
+package com.hcl.bankjsp;
+
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class UpdateAccountServlet
+ */
+public class UpdateAccount {
+  public String updateAccount() {
+  
+  return  AccountBal.updateAccountBal(accno, city, state);
+  }
+}

@@ -1,0 +1,12 @@
+package com.hcl.generics;
+
+public class SwapDemo {
+  /**
+   * main.
+   * @param args .
+   */
+
+  public static void main(String[] args) {
+    
+}
+}

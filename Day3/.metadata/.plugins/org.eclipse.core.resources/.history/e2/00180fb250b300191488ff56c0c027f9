@@ -1,0 +1,33 @@
+package com.hcl.inheritance;
+
+class First {
+
+	public void show(){
+		System.out.println("Base Class Show() method");
+	}
+}
+class Second extends First {
+
+	public void show(){
+		//super.show();
+		System.out.println("Child Class Show() method");
+	}
+}
+public class InhDemo{
+	public static void main(String[] args) {
+		Second obj1 = new Second(); // base class object creation in this way is not suggested
+		First obj2 = new Second(); // up casting // new keyword is given high priority
+
+		
+		
+		//obj1.show();
+		//obj2.show();
+		
+		First f1 = (First)obj2;
+		f1.show();
+		
+		First f2 = (Second)obj2;
+		f2.show();
+		
+	}
+}

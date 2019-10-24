@@ -1,0 +1,24 @@
+package com.hcl.obj;
+import java.util.Scanner;
+
+public class NumToWord
+{
+    public StringBuilder convertIntoWords(int num){
+        StringBuilder word;
+        
+        
+        
+        
+        return word;
+        
+    }
+	public static void main(String[] args) {
+	    int num;
+	    Scanner sc = new Scanner(System.in);
+	    System.out.println("Enter Number : ");
+	    num = sc.nextInt();
+	    System.out.println(new Main().convertIntoWords(num));
+	
+	}
+}
+

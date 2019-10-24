@@ -1,0 +1,12 @@
+package com.hcl.inheritance;
+class First{
+	public First(){
+		System.out.println("BASE CLASS CONSTRUCTOR...");
+	}
+}
+public class Second extends First {
+	public Second(){
+		System.out.println("DERIVED CLASS CONSTRUCTOR...");
+	}
+
+}

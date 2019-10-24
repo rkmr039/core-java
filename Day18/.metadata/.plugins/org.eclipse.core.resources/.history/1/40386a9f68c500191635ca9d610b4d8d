@@ -1,0 +1,9 @@
+package com.hcl.inventory;
+
+public class UpdateStock {
+
+	
+  public String updateStock() {
+	  return InventryBal. 
+  }
+}

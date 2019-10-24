@@ -1,0 +1,14 @@
+package com.hcl.library;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class LibraryTestCases {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

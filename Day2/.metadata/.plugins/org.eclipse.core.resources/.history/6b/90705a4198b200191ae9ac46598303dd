@@ -1,0 +1,14 @@
+package com.hcl.boxing;
+
+import java.sql.Time;
+
+public class TimeZone {
+	
+	int hrs;
+	int mns;
+	
+	
+	
+	
+
+}

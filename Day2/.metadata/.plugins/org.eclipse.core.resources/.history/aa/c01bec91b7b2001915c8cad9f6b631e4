@@ -1,0 +1,6 @@
+package com.hcl.access_specifier;
+
+public class Demo5 extends ProtectedMembers {
+	
+
+}

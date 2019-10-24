@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<a href="Add.jsp" >Open Account</a>
+	<a href="Show.jsp">Close Account</a>&nbsp;&nbsp;&nbsp;
+	<a href="Update.jsp">Update Account</a>&nbsp;&nbsp;&nbsp;
+	<a href="Place.jsp">Deposit Money</a>&nbsp;&nbsp;&nbsp;
+</body>
+</html>

@@ -1,0 +1,7 @@
+package com.hcl.lambdaexpressions;
+
+public class LambdaLimit {
+  public static void main(String[] args) {
+	
+}
+}

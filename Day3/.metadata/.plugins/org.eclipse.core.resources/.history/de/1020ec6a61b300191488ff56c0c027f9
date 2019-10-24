@@ -1,0 +1,26 @@
+package com.hcl.interfacePckg;
+
+interface IOne{
+	void name();
+}
+interface ITwo{
+	void email();
+}
+
+class Test implements IOne, ITwo{
+
+	@Override
+	public void email() {
+		
+	}
+
+	@Override
+	public void name() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}
+public class MultiInh {
+
+}

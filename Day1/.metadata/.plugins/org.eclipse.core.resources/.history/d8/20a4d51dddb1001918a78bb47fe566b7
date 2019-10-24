@@ -1,0 +1,14 @@
+package com.hcl.java;
+
+public class StrFunctionDemo {
+
+	public static void main(String[] args) {
+		String str = "Welcome to Java Programming...";
+		System.out.println("Length of String "+str.length());
+		System.out.println("Char at 5th Position "+str.charAt(4));
+		System.out.println("Index of 'a' is "+str.indexOf('a'));
+		System.out.println("Last Occurance of 'a' "+str.lastIndexOf('a'));
+		
+		
+	}
+}

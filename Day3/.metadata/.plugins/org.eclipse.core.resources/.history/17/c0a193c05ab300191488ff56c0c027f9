@@ -1,0 +1,13 @@
+package com.hcl.abstractClass;
+
+abstract class  Animal{
+	
+	int noOfLegs;
+	abstract void name();
+	abstract void type();
+}
+
+
+public class AbsTest {
+
+}

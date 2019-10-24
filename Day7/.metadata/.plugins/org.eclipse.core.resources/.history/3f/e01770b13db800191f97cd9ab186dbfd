@@ -1,0 +1,50 @@
+package com.hcl.customer;
+
+import java.util.List;
+
+public class CustomerBal {
+  static StringBuilder sb = new StringBuilder();
+  /**
+   * method for adding Customer into list.
+   * @param obj .
+   * @return isAddded . 
+   * @throws CustomerExceptions .
+   */
+
+  public boolean addCustomerBal(Customer obj) throws CustomerExceptions {
+    boolean isAdded = true;
+    if (obj.getCustId() <= 0) {
+      sb.append("Customer ID can not be negative or zero....\r\n");
+      isAdded = false;
+    }
+    if (obj.getCustName().length() <= 3) {
+      sb.append("Name more then 3 characters...\r\n");
+      isAdded = false;
+    }
+    // add more validation
+    if (isAdded == false) {
+      throw new CustomerExceptions(sb.toString());
+    } else {
+      new CustomerDao().addCustomerDao(obj);
+    }
+    return isAdded; 
+  }
+  
+  public Customer searchCustomerBal(int sno) {
+    return new CustomerDao().searchCustomerDao(sno); 
+  }
+  
+  public List<Customer> showCustomerBal() {
+    return new CustomerDao().showCustomerDao();
+  }
+  
+  public String updateCustomerBal(Customer obj) {
+    return new CustomerDao().updateCustomerDao(obj);
+  }
+  
+  public String deleteCustomerBal(int sno) {
+    return new CustomerDao().deleteCustomerDao(sno); 
+  }
+  
+  
+}

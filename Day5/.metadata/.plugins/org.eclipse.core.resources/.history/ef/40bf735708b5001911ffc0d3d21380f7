@@ -1,0 +1,18 @@
+package com.hcl.scanner;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+public class ScanFile {
+
+	public static void main(String[] args) {
+		try {
+			FileInputStream fin = new FileInputStream("C:/files/Custom2.txt");
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+}

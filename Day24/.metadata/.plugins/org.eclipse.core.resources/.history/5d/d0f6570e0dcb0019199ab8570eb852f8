@@ -1,0 +1,7 @@
+package com.hcl.dept;
+
+public class DeptSearch {
+	public static void main(String[] args) {
+		
+	}
+}

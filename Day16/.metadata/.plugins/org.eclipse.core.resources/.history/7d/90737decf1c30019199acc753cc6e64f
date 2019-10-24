@@ -1,0 +1,48 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="com.hcl.jspcrud.DaoConnection"%>
+<%@page import="java.sql.Connection"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+		int empno = Integer.parseInt(request.getParameter("empno"));
+	%>
+	<form method="get" action="UpdateEmploy.jsp">
+		<center>
+			Designation:
+			<input type="text" name="desig" required/><br/><br/>
+			Salary:
+			<input type="text" name="basic" required/><br/><br/>
+			<input type="submit" value="Insert"/><br/><br/>
+		</center>
+	</form>
+
+		<%
+		if(request.getParameter("empno") != null && request.getParameter("basic") != null) {
+			Connection con = DaoConnection.getConnection();
+			String cmd = "update employ set desig=?,basic=? where empno = ?";
+			PreparedStatement pst = con.prepareStatement(cmd);
+			
+			
+			String desig = request.getParameter("desig");
+			int basic = Integer.parseInt(request.getParameter("basic"));
+			
+			
+			pst.setString(1, desig);
+			pst.setInt(2, basic);
+			pst.setInt(3,empno);
+			pst.executeUpdate();
+			out.println("<br/><b>*****UPDATED*****</b><br/>");
+		}
+		%>
+		
+	</table>
+</body>
+</html>

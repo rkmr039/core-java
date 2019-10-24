@@ -1,0 +1,40 @@
+package com.hcl.jdbcstudent;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class StudentSearch {
+  /**
+   * main.
+   * @param args .
+   */
+
+  public static void main(String[] args) {
+    int empno;
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter Student No ");
+    empno = sc.nextInt();
+    Connection con = new DaoConnection().getConnection();
+    String cmd = "Select * from Student where empno = ?";
+    try {
+      PreparedStatement ps = con.prepareStatement(cmd);
+      ps.setInt(1,empno);
+      ResultSet rs = ps.executeQuery();
+      if (rs.next()) {
+        System.out.println("Student          : " + rs.getInt("empno"));
+        System.out.println("Student Name     : " + rs.getString("name"));
+        System.out.println("Sub1 Marks       : " + rs.getString("dept"));
+        System.out.println("Sub2 Marks       : " + rs.getString("desig"));
+        System.out.println("Sub3 Marks       : " + rs.getInt("basic"));
+        System.out.println("------------------------------------------");
+      } else {
+        System.out.println("======= Record Not Found======");
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+  }
+}

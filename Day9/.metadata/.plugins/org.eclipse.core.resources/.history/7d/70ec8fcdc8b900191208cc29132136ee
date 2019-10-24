@@ -1,0 +1,9 @@
+package com.hcl.inventry;
+
+public class Order {
+  private int orderid;
+  private String stockid;
+  private int qtyord;
+  private double billAmt;
+
+}

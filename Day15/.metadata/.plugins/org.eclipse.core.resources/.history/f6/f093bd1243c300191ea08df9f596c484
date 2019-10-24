@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	Welcome User : <p id="name"></p>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="LogoutServlet"><input type="submit" value="Logout"></a><br/><br/>
+	<a href="SearchBooks">Search Book</a>&nbsp;&nbsp;&nbsp;
+	<a href="ReturnBooks">Return Book</a>&nbsp;&nbsp;&nbsp;
+	<a href="MyAccount">My Account</a>&nbsp;&nbsp;&nbsp;
+	<a href="IssueBooks">Issue Book</a>&nbsp;&nbsp;&nbsp;
+</body>
+</html>

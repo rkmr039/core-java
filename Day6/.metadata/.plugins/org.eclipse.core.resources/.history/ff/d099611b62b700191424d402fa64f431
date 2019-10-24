@@ -1,0 +1,12 @@
+package com.hcl.students;
+
+import java.util.List;
+
+public class StudentDAO {
+  public static void main(String[] args) {
+   static List<Student> lstStudent = null;
+   static {
+	   lstStudent = new ArrayList<Student>(0);
+   }
+}
+}

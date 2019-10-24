@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.hcl.bankjsp.AccountDao"/>
+<fullyQualifiedTypeName name="com.hcl.bankjsp.AccountBal"/>
+<fullyQualifiedTypeName name="com.hcl.inventory.Stock"/>
+<fullyQualifiedTypeName name="com.hcl.inventory.InventryDao"/>
+<fullyQualifiedTypeName name="com.hcl.inventory.InventryBal"/>
+</qualifiedTypeNameHistroy>

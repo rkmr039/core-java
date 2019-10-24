@@ -1,0 +1,16 @@
+package com.hcl.jdbcdemo;
+
+import java.sql.Connection;
+
+public class EmployShow {
+  /**
+   * main() .
+   * @param args .
+   *
+   */
+
+  public static void main(String[] args) {
+    Connection con = GetDbConnection.getConnection();
+    
+  }
+}

@@ -1,0 +1,10 @@
+package com.hcl.scanner;
+
+import java.io.FileInputStream;
+
+public class ScanFile {
+
+	public static void main(String[] args) {
+		FileInputStream fin = new FileInputStream("C:/files/Custom2.txt")
+	}
+}

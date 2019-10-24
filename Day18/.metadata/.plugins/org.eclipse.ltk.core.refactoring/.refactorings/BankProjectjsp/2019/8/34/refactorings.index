@@ -1,0 +1,26 @@
+1566457463401	Rename type 'WithdrawlAccountServlet'
+1566457469803	Rename type 'UpdateAccountServlet'
+1566457474934	Rename type 'SearchAccountServlet'
+1566457479710	Rename type 'DepositeAccountServlet'
+1566457485661	Rename type 'CloseAccountServlet'
+1566466194682	Rename resource 'DepositeAccount.jsp'
+1566466212744	Rename type 'DepositeAccount'
+1566466317530	Rename resource 'WithdrawlAccount.jsp'
+1566466331923	Rename resource 'WithdrawlAccount.html'
+1566466341007	Rename type 'WithdrawlAccount'
+1566466626011	Rename resource 'menu.html'
+1566466983290	Rename resource 'dashboard.html'
+1566466996652	Rename resource 'menu.html'
+1566467008317	Rename resource 'menu.jsp'
+1566467954168	Rename resource 'DepositeAccount.html'
+1566470501659	Delete element
+1566470544635	Delete element
+1566470582219	Delete element
+1566470588848	Delete element
+1566470621731	Delete element
+1566472033620	Copy package
+1566476822391	Copy file
+1566476927463	Delete element
+1566477970958	Copy file
+1566478356467	Copy compilation unit
+1566478716964	Copy file

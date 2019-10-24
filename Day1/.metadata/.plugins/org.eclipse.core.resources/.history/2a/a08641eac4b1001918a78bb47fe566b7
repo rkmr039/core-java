@@ -1,0 +1,8 @@
+package com.hcl.java;
+
+public class CircleDemo {
+
+	public static void main(String[] args) {
+		double radius=12.5;
+	}
+}

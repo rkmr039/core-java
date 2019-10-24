@@ -1,0 +1,12 @@
+package com.hcl.generics;
+
+public class SortStudent {
+  /**
+   * main().
+   * @param args . 
+   */
+
+  public static void main(String[] args) {
+	
+}
+}

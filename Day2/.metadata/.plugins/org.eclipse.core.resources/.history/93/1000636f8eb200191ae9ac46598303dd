@@ -1,0 +1,11 @@
+package com.hcl.boxing;
+
+public class EmploySearch {
+
+	public Employ showEmploy(int empno){
+		
+	}
+	public static void main(String[] args) {
+		
+	}
+}

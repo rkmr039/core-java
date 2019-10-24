@@ -1,0 +1,6 @@
+package com.hcl.abstractClass;
+
+abstract public class AbsDemo {
+
+	
+}

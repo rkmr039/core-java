@@ -1,0 +1,25 @@
+package com.hcl.collections;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ArrLstIntEx { 
+  /**
+   * main().
+   * @param args .
+   */
+
+  public static void main(String[] args) {
+    List arr = new ArrayList();
+    arr.add(new Integer(22));
+    arr.add(new Integer(23));
+    arr.add(new Integer(24));
+    arr.add(new Integer(25));
+    arr.add(new Integer(26));
+    int sum = 0;
+    for (Object ob : arr) { 
+      sum += (Integer)ob; // un boxing
+    }
+    System.out.println(sum);
+  }
+}

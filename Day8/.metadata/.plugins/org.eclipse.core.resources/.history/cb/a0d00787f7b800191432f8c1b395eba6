@@ -1,0 +1,30 @@
+package com.hcl.jdbc;
+
+import java.sql.Connection;
+import java.util.ResourceBundle;
+
+public class DaoConnection {
+  /**
+   * main entry point. 
+   * @param args .
+   */
+
+  public static void main(String[] args) {
+	
+  }
+  
+  public static Connection getConnection() {
+    ResourceBundle rb = ResourceBundle.getBundle("db");
+    try {
+		Class.forName(rb.getString("mysqldriver"));
+		String url = rb.getString("url");
+		String user = rb.getString("user");
+		String password = rb.getString("password");
+	} catch (ClassNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	return null;
+  
+  }
+}

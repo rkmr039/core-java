@@ -1,0 +1,29 @@
+package com.hcl.lambdaexpressions;
+
+public class LambdaDemo2 {
+  /**
+   * main() .
+   * 
+   * @param args
+   *            .
+   */
+
+  public static void main(String[] args) {
+		IHello h1 = () -> {
+			System.out.println("Say Hello from Rishab");
+		};
+		IHello h2 = () -> {
+			System.out.println("Say Hello from Anand");
+		};
+		IHello h3 = () -> {
+			System.out.println("Say Hello from Amit");
+		};
+		IHello h4 = () -> {
+			System.out.println("Say Hello from Yahs");
+		};
+		IHello[] arr = new IHello[] {h1,h2,h3,h4};
+		for (IHello iHello : arr) {
+			iHello.sayHello();
+		}
+	}
+}

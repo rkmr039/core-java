@@ -1,0 +1,16 @@
+package com.hcl.boxing;
+
+public class BoxTest {
+
+	public void show(Object obj){
+		// String type = obj.getClass().getName(); // class name with package
+		String type = obj.getClass().getSimpleName(); // class name without package
+		System.out.println(type);
+	}
+	public static void main(String[] args) {
+		int a =12;
+		double b = 12.5;
+		String name="HCL";
+		
+	}
+}

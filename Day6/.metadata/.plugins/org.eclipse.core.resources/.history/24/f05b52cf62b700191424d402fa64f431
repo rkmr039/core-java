@@ -1,0 +1,28 @@
+package com.hcl.students;
+
+import java.util.Scanner;
+
+public class SearchStudent {
+  /**
+   * main().
+   * @param args
+   */
+
+  public static void main(String[] args) {
+  
+  
+  System.out.println("Select Operation to Perform");
+  System.out.println("1.Search\n2.Edit\n3.Update\n4.Delete");
+  Scanner sc = new Scanner(System.in);
+  int opt = sc.nextInt();
+  switch (opt) {
+case 1:
+	
+	break;
+
+default:
+	break;
+}
+  System.out.println();
+  }
+}

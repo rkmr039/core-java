@@ -1,0 +1,12 @@
+package com.hcl.inventory;
+
+public class ShowStock {
+	String stock = "<jsp:include page='menu.html'></jsp:include> <form method='get' acton='ShowStock.jsp'> <center> <table border='1'> "
+			+ "	<tr> " 
+				+ "	<th>Stock Id</th> " 
+				+ "	<th>Item Name</th>" 
+				+ "	<th>Price</th>" 
+				+ "	<th>Quantity Available</th></tr> <tr>  " ;
+					
+	stock +=  "	</tr></table></center></form>";
+}

@@ -1,0 +1,9 @@
+package com.hcl.jdbc;
+
+public class EmploySearch {
+  public static void main(String[] args) {
+	int empno;
+	
+}
+
+}
